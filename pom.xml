@@ -77,6 +77,7 @@
                 <version>2.5.2</version>
                 <executions>
                     <execution>
+                        <id>install-xqj-api</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>install-file</goal>
@@ -87,13 +88,29 @@
                             <artifactId>xquery</artifactId>
                             <version>1.0.0</version>
                             <packaging>jar</packaging>
-
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-exist-xqj</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
                             <file>lib/exist-xqj-1.0.1.jar</file>
                             <groupId>net.xqj.exist</groupId>
                             <artifactId>exist-xqj</artifactId>
                             <version>1.0.0</version>
                             <packaging>jar</packaging>
-
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-xqj2</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
                             <file>lib/xqj2-0.0.1.jar</file>
                             <groupId>com.xqj2</groupId>
                             <artifactId>xqj2</artifactId>
