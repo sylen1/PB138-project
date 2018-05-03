@@ -47,9 +47,21 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>javax.xml.xquery</groupId>
+            <artifactId>xquery</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.xqj.exist</groupId>
+            <artifactId>exist-xqj</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xqj2</groupId>
+            <artifactId>xqj2</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
@@ -58,6 +70,38 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <file>lib/xqjapi.jar</file>
+                            <groupId>javax.xml.xquery</groupId>
+                            <artifactId>xquery</artifactId>
+                            <version>1.0.0</version>
+                            <packaging>jar</packaging>
+
+                            <file>lib/exist-xqj-1.0.1.jar</file>
+                            <groupId>net.xqj.exist</groupId>
+                            <artifactId>exist-xqj</artifactId>
+                            <version>1.0.0</version>
+                            <packaging>jar</packaging>
+
+                            <file>lib/xqj2-0.0.1.jar</file>
+                            <groupId>com.xqj2</groupId>
+                            <artifactId>xqj2</artifactId>
+                            <version>1.0.0</version>
+                            <packaging>jar</packaging>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
