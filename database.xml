@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+    <category name="Movies">
+        <medium>
+            <id>1</id>
+            <label>Lauderdale (a.k.a. Spring Break USA) (a.k.a. Spring Fever USA)</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Comedy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>2</id>
+            <label>Moloch (Molokh)</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>3</id>
+            <label>Baboona</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Adventure</genre>
+                <genre>Documentary</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>4</id>
+            <label>Sanctum</label>
+            <type>other</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Adventure</genre>
+                <genre>Drama</genre>
+                <genre>Thriller</genre>
+                <genre>IMAX</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>5</id>
+            <label>King Is Alive, The</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>6</id>
+            <label>Diamond Girl</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>7</id>
+            <label>Long Weekend, The</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Comedy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>8</id>
+            <label>Tentacles (Tentacoli)</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Horror</genre>
+                <genre>Sci-Fi</genre>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>9</id>
+            <label>Some Guy Who Kills People</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>10</id>
+            <label>Gleaming the Cube</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Drama</genre>
+                <genre>Mystery</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>11</id>
+            <label>Animal Room</label>
+            <type>other</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>12</id>
+            <label>Fairy, The (La fée)</label>
+            <type>other</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>13</id>
+            <label>Crossworlds</label>
+            <type>other</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Comedy</genre>
+                <genre>Sci-Fi</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>14</id>
+            <label>Ace of Aces (a.k.a. Super Ace, The) (As des as, L')</label>
+            <type>other</type>
+            <genres>
+                <genre>Adventure</genre>
+                <genre>Comedy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>15</id>
+            <label>Primeval</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Horror</genre>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>16</id>
+            <label>Runaway</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Animation</genre>
+                <genre>Comedy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>17</id>
+            <label>All About the Benjamins</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Comedy</genre>
+                <genre>Crime</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>18</id>
+            <label>City Streets</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Crime</genre>
+                <genre>Film-Noir</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>19</id>
+            <label>Killer Inside Me, The</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Crime</genre>
+                <genre>Drama</genre>
+                <genre>Thriller</genre>
+                <genre>Western</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>20</id>
+            <label>John Dies at the End</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>Fantasy</genre>
+                <genre>Horror</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>21</id>
+            <label>Long Live Death (Viva la muerte)</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>War</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>22</id>
+            <label>Hill, The</label>
+            <type>other</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>War</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>23</id>
+            <label>Cabinet of Caligari, The</label>
+            <type>other</type>
+            <genres>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>24</id>
+            <label>Grudge 3, The</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Horror</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>25</id>
+            <label>Summer Lovers</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>Drama</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>26</id>
+            <label>Knockaround Guys</label>
+            <type>other</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Comedy</genre>
+                <genre>Crime</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>27</id>
+            <label>The Emperor of California</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Western</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>28</id>
+            <label>Story of the Late Chrysanthemums, The (Zangiku monogatari)</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>29</id>
+            <label>It's a Great Feeling</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Comedy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>30</id>
+            <label>Sum of All Fears, The</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>31</id>
+            <label>Cardcaptor Sakura: The Sealed Card</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Adventure</genre>
+                <genre>Animation</genre>
+                <genre>Comedy</genre>
+                <genre>Fantasy</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>32</id>
+            <label>Best Man, The (Testimone dello sposo, Il)</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>Drama</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>33</id>
+            <label>Season of the Witch</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Adventure</genre>
+                <genre>Drama</genre>
+                <genre>Fantasy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>34</id>
+            <label>Alamo Bay</label>
+            <type>other</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Drama</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>35</id>
+            <label>Sister Helen</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Documentary</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>36</id>
+            <label>Patriots, The (Patriotes, Les)</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Thriller</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>37</id>
+            <label>Valley, The (Obscured by Clouds) (La vallée)</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>38</id>
+            <label>Moolaadé</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>39</id>
+            <label>Housekeeper, The (femme de ménage, Une)</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>Drama</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>40</id>
+            <label>Jean Renoir: Part One - From La Belle Époque to World War II</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Documentary</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>41</id>
+            <label>51</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Horror</genre>
+                <genre>Sci-Fi</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>42</id>
+            <label>Rails &amp; Ties</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>43</id>
+            <label>Forty Guns</label>
+            <type>other</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>Western</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>44</id>
+            <label>Carol for Another Christmas</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>Fantasy</genre>
+                <genre>War</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>45</id>
+            <label>Block-Heads</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Comedy</genre>
+                <genre>War</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>46</id>
+            <label>Sisterhood of the Traveling Pants 2, The</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Adventure</genre>
+                <genre>Comedy</genre>
+                <genre>Drama</genre>
+                <genre>Romance</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>47</id>
+            <label>Clerks II</label>
+            <type>DVD</type>
+            <genres>
+                <genre>Comedy</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>48</id>
+            <label>Back to Bataan</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Drama</genre>
+                <genre>War</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>49</id>
+            <label>Starting Out in the Evening</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Drama</genre>
+            </genres>
+        </medium>
+        <medium>
+            <id>50</id>
+            <label>Last Drop, The</label>
+            <type>VHS</type>
+            <genres>
+                <genre>Action</genre>
+                <genre>Adventure</genre>
+                <genre>Crime</genre>
+                <genre>War</genre>
+            </genres>
+        </medium>
+    </category>
+    <category name="Trips around the world">
+        <medium>
+            <id>51</id>
+            <label>trip Vietnam</label>
+            <type>DVD</type>
+            <entries>
+                <entry>September</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>134 min</duration>
+                <year>2015</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>52</id>
+            <label>trip Philippines</label>
+            <type>VHS</type>
+            <entries>
+                <entry>November</entry>
+                <entry>May</entry>
+                <entry>December</entry>
+            </entries>
+            <properties>
+                <duration>128 min</duration>
+                <year>2016</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>53</id>
+            <label>trip Lebanon</label>
+            <type>DVD</type>
+            <entries>
+                <entry>October</entry>
+                <entry>March</entry>
+                <entry>April</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>94 min</duration>
+                <year>2009</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>54</id>
+            <label>trip Poland</label>
+            <type>DVD</type>
+            <entries>
+                <entry>August</entry>
+                <entry>December</entry>
+                <entry>November</entry>
+                <entry>January</entry>
+            </entries>
+            <properties>
+                <duration>126 min</duration>
+                <year>2016</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>55</id>
+            <label>trip Brazil</label>
+            <type>DVD</type>
+            <entries>
+                <entry>February</entry>
+                <entry>July</entry>
+                <entry>October</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>126 min</duration>
+                <year>2012</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>56</id>
+            <label>trip Norway</label>
+            <type>VHS</type>
+            <entries>
+                <entry>January</entry>
+                <entry>May</entry>
+                <entry>September</entry>
+                <entry>March</entry>
+            </entries>
+            <properties>
+                <duration>93 min</duration>
+                <year>2004</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>57</id>
+            <label>trip China</label>
+            <type>VHS</type>
+            <entries>
+                <entry>March</entry>
+                <entry>December</entry>
+                <entry>May</entry>
+                <entry>April</entry>
+            </entries>
+            <properties>
+                <duration>132 min</duration>
+                <year>2005</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>58</id>
+            <label>trip France</label>
+            <type>other</type>
+            <entries>
+                <entry>November</entry>
+                <entry>September</entry>
+            </entries>
+            <properties>
+                <duration>141 min</duration>
+                <year>2001</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>59</id>
+            <label>trip Poland</label>
+            <type>other</type>
+            <entries>
+                <entry>September</entry>
+                <entry>February</entry>
+            </entries>
+            <properties>
+                <duration>110 min</duration>
+                <year>2015</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>60</id>
+            <label>trip Norway</label>
+            <type>DVD</type>
+            <entries>
+                <entry>December</entry>
+                <entry>April</entry>
+            </entries>
+            <properties>
+                <duration>99 min</duration>
+                <year>2013</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>61</id>
+            <label>trip China</label>
+            <type>VHS</type>
+            <entries>
+                <entry>June</entry>
+                <entry>April</entry>
+                <entry>January</entry>
+                <entry>December</entry>
+            </entries>
+            <properties>
+                <duration>97 min</duration>
+                <year>2002</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>62</id>
+            <label>trip Thailand</label>
+            <type>VHS</type>
+            <entries>
+                <entry>March</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>127 min</duration>
+                <year>2011</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>63</id>
+            <label>trip Indonesia</label>
+            <type>VHS</type>
+            <entries>
+                <entry>February</entry>
+                <entry>July</entry>
+            </entries>
+            <properties>
+                <duration>121 min</duration>
+                <year>1996</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>64</id>
+            <label>trip Nigeria</label>
+            <type>VHS</type>
+            <entries>
+                <entry>December</entry>
+                <entry>July</entry>
+                <entry>January</entry>
+            </entries>
+            <properties>
+                <duration>111 min</duration>
+                <year>1995</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>65</id>
+            <label>trip Iran</label>
+            <type>other</type>
+            <entries>
+                <entry>January</entry>
+                <entry>May</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>129 min</duration>
+                <year>2017</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>66</id>
+            <label>trip Venezuela</label>
+            <type>VHS</type>
+            <entries>
+                <entry>January</entry>
+                <entry>May</entry>
+                <entry>June</entry>
+                <entry>April</entry>
+            </entries>
+            <properties>
+                <duration>114 min</duration>
+                <year>2003</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>67</id>
+            <label>trip Albania</label>
+            <type>DVD</type>
+            <entries>
+                <entry>January</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>133 min</duration>
+                <year>2000</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>68</id>
+            <label>trip Indonesia</label>
+            <type>DVD</type>
+            <entries>
+                <entry>January</entry>
+                <entry>February</entry>
+                <entry>June</entry>
+            </entries>
+            <properties>
+                <duration>111 min</duration>
+                <year>2001</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>69</id>
+            <label>trip Dominican Republic</label>
+            <type>DVD</type>
+            <entries>
+                <entry>March</entry>
+                <entry>May</entry>
+            </entries>
+            <properties>
+                <duration>92 min</duration>
+                <year>1998</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>70</id>
+            <label>trip Russia</label>
+            <type>DVD</type>
+            <entries>
+                <entry>October</entry>
+                <entry>January</entry>
+                <entry>June</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>142 min</duration>
+                <year>2008</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>71</id>
+            <label>trip Malaysia</label>
+            <type>VHS</type>
+            <entries>
+                <entry>April</entry>
+                <entry>August</entry>
+                <entry>June</entry>
+                <entry>October</entry>
+            </entries>
+            <properties>
+                <duration>97 min</duration>
+                <year>2015</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>72</id>
+            <label>trip France</label>
+            <type>VHS</type>
+            <entries>
+                <entry>July</entry>
+                <entry>February</entry>
+                <entry>October</entry>
+                <entry>September</entry>
+            </entries>
+            <properties>
+                <duration>116 min</duration>
+                <year>2013</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>73</id>
+            <label>trip China</label>
+            <type>DVD</type>
+            <entries>
+                <entry>December</entry>
+                <entry>March</entry>
+                <entry>February</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>113 min</duration>
+                <year>2001</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>74</id>
+            <label>trip Vietnam</label>
+            <type>other</type>
+            <entries>
+                <entry>August</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>105 min</duration>
+                <year>2001</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>75</id>
+            <label>trip Philippines</label>
+            <type>VHS</type>
+            <entries>
+                <entry>July</entry>
+                <entry>June</entry>
+                <entry>December</entry>
+                <entry>February</entry>
+            </entries>
+            <properties>
+                <duration>113 min</duration>
+                <year>2008</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>76</id>
+            <label>trip Argentina</label>
+            <type>VHS</type>
+            <entries>
+                <entry>April</entry>
+                <entry>July</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>94 min</duration>
+                <year>2013</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>77</id>
+            <label>trip United States</label>
+            <type>DVD</type>
+            <entries>
+                <entry>January</entry>
+                <entry>September</entry>
+                <entry>March</entry>
+                <entry>April</entry>
+            </entries>
+            <properties>
+                <duration>108 min</duration>
+                <year>2010</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>78</id>
+            <label>trip Central African Republic</label>
+            <type>VHS</type>
+            <entries>
+                <entry>February</entry>
+                <entry>May</entry>
+                <entry>September</entry>
+                <entry>June</entry>
+            </entries>
+            <properties>
+                <duration>105 min</duration>
+                <year>2014</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>79</id>
+            <label>trip Poland</label>
+            <type>other</type>
+            <entries>
+                <entry>March</entry>
+                <entry>April</entry>
+                <entry>August</entry>
+                <entry>January</entry>
+            </entries>
+            <properties>
+                <duration>130 min</duration>
+                <year>2005</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>80</id>
+            <label>trip Philippines</label>
+            <type>DVD</type>
+            <entries>
+                <entry>October</entry>
+                <entry>April</entry>
+                <entry>February</entry>
+                <entry>May</entry>
+            </entries>
+            <properties>
+                <duration>110 min</duration>
+                <year>2009</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>81</id>
+            <label>trip Uganda</label>
+            <type>VHS</type>
+            <entries>
+                <entry>April</entry>
+                <entry>January</entry>
+            </entries>
+            <properties>
+                <duration>148 min</duration>
+                <year>2013</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>82</id>
+            <label>trip Japan</label>
+            <type>DVD</type>
+            <entries>
+                <entry>February</entry>
+                <entry>September</entry>
+                <entry>April</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>93 min</duration>
+                <year>2008</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>83</id>
+            <label>trip Poland</label>
+            <type>DVD</type>
+            <entries>
+                <entry>February</entry>
+                <entry>May</entry>
+            </entries>
+            <properties>
+                <duration>132 min</duration>
+                <year>2005</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>84</id>
+            <label>trip China</label>
+            <type>VHS</type>
+            <entries>
+                <entry>February</entry>
+                <entry>April</entry>
+            </entries>
+            <properties>
+                <duration>101 min</duration>
+                <year>1999</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>85</id>
+            <label>trip Bosnia and Herzegovina</label>
+            <type>DVD</type>
+            <entries>
+                <entry>October</entry>
+                <entry>September</entry>
+            </entries>
+            <properties>
+                <duration>144 min</duration>
+                <year>2009</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>86</id>
+            <label>trip Thailand</label>
+            <type>VHS</type>
+            <entries>
+                <entry>January</entry>
+                <entry>March</entry>
+            </entries>
+            <properties>
+                <duration>127 min</duration>
+                <year>1997</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>87</id>
+            <label>trip Israel</label>
+            <type>VHS</type>
+            <entries>
+                <entry>October</entry>
+                <entry>August</entry>
+                <entry>June</entry>
+            </entries>
+            <properties>
+                <duration>105 min</duration>
+                <year>2014</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>88</id>
+            <label>trip France</label>
+            <type>VHS</type>
+            <entries>
+                <entry>November</entry>
+                <entry>October</entry>
+                <entry>March</entry>
+                <entry>April</entry>
+            </entries>
+            <properties>
+                <duration>137 min</duration>
+                <year>2016</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>89</id>
+            <label>trip China</label>
+            <type>DVD</type>
+            <entries>
+                <entry>March</entry>
+                <entry>June</entry>
+                <entry>November</entry>
+            </entries>
+            <properties>
+                <duration>95 min</duration>
+                <year>2009</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>90</id>
+            <label>trip Jordan</label>
+            <type>other</type>
+            <entries>
+                <entry>October</entry>
+                <entry>June</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>125 min</duration>
+                <year>2005</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>91</id>
+            <label>trip Portugal</label>
+            <type>VHS</type>
+            <entries>
+                <entry>November</entry>
+                <entry>October</entry>
+            </entries>
+            <properties>
+                <duration>125 min</duration>
+                <year>2009</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>92</id>
+            <label>trip Belarus</label>
+            <type>DVD</type>
+            <entries>
+                <entry>June</entry>
+                <entry>February</entry>
+                <entry>September</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>101 min</duration>
+                <year>1995</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>93</id>
+            <label>trip Colombia</label>
+            <type>DVD</type>
+            <entries>
+                <entry>October</entry>
+                <entry>June</entry>
+                <entry>February</entry>
+            </entries>
+            <properties>
+                <duration>141 min</duration>
+                <year>2009</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>94</id>
+            <label>trip Saudi Arabia</label>
+            <type>DVD</type>
+            <entries>
+                <entry>July</entry>
+                <entry>June</entry>
+                <entry>October</entry>
+            </entries>
+            <properties>
+                <duration>132 min</duration>
+                <year>2013</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>95</id>
+            <label>trip Philippines</label>
+            <type>DVD</type>
+            <entries>
+                <entry>December</entry>
+                <entry>May</entry>
+            </entries>
+            <properties>
+                <duration>123 min</duration>
+                <year>2005</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>96</id>
+            <label>trip Indonesia</label>
+            <type>VHS</type>
+            <entries>
+                <entry>April</entry>
+                <entry>February</entry>
+            </entries>
+            <properties>
+                <duration>120 min</duration>
+                <year>2017</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>97</id>
+            <label>trip Indonesia</label>
+            <type>VHS</type>
+            <entries>
+                <entry>August</entry>
+                <entry>November</entry>
+                <entry>April</entry>
+                <entry>October</entry>
+            </entries>
+            <properties>
+                <duration>125 min</duration>
+                <year>2002</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>98</id>
+            <label>trip Poland</label>
+            <type>VHS</type>
+            <entries>
+                <entry>June</entry>
+                <entry>September</entry>
+                <entry>August</entry>
+            </entries>
+            <properties>
+                <duration>118 min</duration>
+                <year>2006</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>99</id>
+            <label>trip Guatemala</label>
+            <type>VHS</type>
+            <entries>
+                <entry>March</entry>
+                <entry>December</entry>
+                <entry>September</entry>
+            </entries>
+            <properties>
+                <duration>150 min</duration>
+                <year>2013</year>
+            </properties>
+        </medium>
+        <medium>
+            <id>100</id>
+            <label>trip Brazil</label>
+            <type>DVD</type>
+            <entries>
+                <entry>June</entry>
+                <entry>September</entry>
+            </entries>
+            <properties>
+                <duration>122 min</duration>
+                <year>1999</year>
+            </properties>
+        </medium>
+    </category>
+    <category name="Guides and Tutorials">
+        <medium>
+            <id>101</id>
+            <label>Compensation Analyst</label>
+            <type>other</type>
+        </medium>
+        <medium>
+            <id>102</id>
+            <label>Physical Therapy Assistant</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>103</id>
+            <label>Sales Associate</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>104</id>
+            <label>Environmental Tech</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>105</id>
+            <label>Legal Assistant</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>106</id>
+            <label>Developer IV</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>107</id>
+            <label>Cost Accountant</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>108</id>
+            <label>Health Coach III</label>
+            <type>other</type>
+        </medium>
+        <medium>
+            <id>109</id>
+            <label>Systems Administrator I</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>110</id>
+            <label>Pharmacist</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>111</id>
+            <label>Nurse</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>112</id>
+            <label>Assistant Professor</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>113</id>
+            <label>Programmer Analyst III</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>114</id>
+            <label>Business Systems Development Analyst</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>115</id>
+            <label>VP Product Management</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>116</id>
+            <label>Quality Engineer</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>117</id>
+            <label>Physical Therapy Assistant</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>118</id>
+            <label>Programmer III</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>119</id>
+            <label>Health Coach III</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>120</id>
+            <label>Administrative Assistant II</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>121</id>
+            <label>GIS Technical Architect</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>122</id>
+            <label>Assistant Manager</label>
+            <type>other</type>
+        </medium>
+        <medium>
+            <id>123</id>
+            <label>Assistant Media Planner</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>124</id>
+            <label>Assistant Professor</label>
+            <type>other</type>
+        </medium>
+        <medium>
+            <id>125</id>
+            <label>Software Consultant</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>126</id>
+            <label>Administrative Officer</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>127</id>
+            <label>Recruiting Manager</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>128</id>
+            <label>Business Systems Development Analyst</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>129</id>
+            <label>Account Coordinator</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>130</id>
+            <label>Sales Representative</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>131</id>
+            <label>Electrical Engineer</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>132</id>
+            <label>Speech Pathologist</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>133</id>
+            <label>Structural Engineer</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>134</id>
+            <label>Technical Writer</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>135</id>
+            <label>VP Accounting</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>136</id>
+            <label>Programmer Analyst II</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>137</id>
+            <label>Human Resources Assistant I</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>138</id>
+            <label>Mechanical Systems Engineer</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>139</id>
+            <label>Media Manager IV</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>140</id>
+            <label>Help Desk Operator</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>141</id>
+            <label>Payment Adjustment Coordinator</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>142</id>
+            <label>Computer Systems Analyst II</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>143</id>
+            <label>Senior Cost Accountant</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>144</id>
+            <label>Senior Financial Analyst</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>145</id>
+            <label>Teacher</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>146</id>
+            <label>Staff Scientist</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>147</id>
+            <label>Administrative Assistant II</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>148</id>
+            <label>Structural Engineer</label>
+            <type>DVD</type>
+        </medium>
+        <medium>
+            <id>149</id>
+            <label>Information Systems Manager</label>
+            <type>VHS</type>
+        </medium>
+        <medium>
+            <id>150</id>
+            <label>Project Manager</label>
+            <type>other</type>
+        </medium>
+        <medium>
+            <id>151</id>
+            <label>Quality Engineer</label>
+            <type>DVD</type>
+        </medium>
+    </category>
+</collection>
