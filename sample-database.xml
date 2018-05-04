@@ -2,6 +2,7 @@
 <collection>
     <category name="DVD - movies"><!-- 0 or more, name: non-empty string, unique -->
         <medium><!-- 0 or more -->
+        	<id>1</id><!-- required, unique -->
             <label>Pirates of the Caribbean</label><!-- required, non-empty string -->
             <type>DVD</type><!-- optional, values: DVD, VHS, USB, memory-card, other -->
             <genres><!-- optional -->
@@ -15,6 +16,7 @@
         </medium>
 
         <medium>
+        	<id>2</id>
             <label>The Boss Baby</label><!-- required, non-empty string -->
             <type>DVD</type>
             <genres>
@@ -29,6 +31,7 @@
 
     <category name="VHS - homemade">
         <medium>
+        	<id>3</id>
             <label>trip in scandinavia 2004</label>
             <type>VHS</type>
             <content><!-- optional, list of entries -->
