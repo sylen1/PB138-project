@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  * Native XML database API manager.
- *
+ * @author Kristyna Pekarkova
  */
 public interface XMLDatabaseManager {
 
