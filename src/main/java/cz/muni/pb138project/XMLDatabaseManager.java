@@ -1,5 +1,7 @@
 package cz.muni.pb138project;
 
+import java.util.Map;
+
 /**
  * Native XML database API manager.
  *
@@ -23,12 +25,20 @@ public interface XMLDatabaseManager {
 
 
     /**
-     * Adds a medium to a specified category.
+     * Searches for media that belong to a certain category.
+     * @param category to which the media belong
+     * @return
+     */
+    String searchMediaByCategory(String category);
+
+
+    /**
+     * Creates a new medium entry and adds it to a given category in the database.
      * @param medium to be added to a certain category
      * @param category to add the media to
      * @return
      */
-    String addMediumToCategory(String medium, String category);
+    String addMediumToCollection(String medium, String category);
 
 
     /**
@@ -49,19 +59,14 @@ public interface XMLDatabaseManager {
 
 
     /**
-     * Searches for media that belong to a certain category.
-     * @param category to which the media belong
-     * @return
-     */
-    String searchMediaByCategory(String category);
-
-
-    /**
      * Searches for media with the given attribute.
-     * @param attribute common for the searched media
+     * @param label
+     * @param genres to which the media belong
+     * @param properties
+     * @param category of the searched media
      * @return
      */
-    String searchMediaByAttribute(String attribute);
+    String searchMedia(String label, String[] genres, Map<String, String>properties, String category);
 
 
 }
