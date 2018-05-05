@@ -32,6 +32,13 @@ public interface XMLDatabaseManager {
 
     /**
      * Finds all media categories that currently exist in the database.
+     * Example output:
+     * <categories>
+     *     <category>category1</category>
+     *     <category>category2</category>
+     *     <category>category3</category>
+     *     ...
+     * <categories>
      * @return all media categories in the database
      */
     String findAllCategories();
