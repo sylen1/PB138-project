@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Video Database</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <!-- Custom styles for this template -->
+        <link href="custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Video Database</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--                 <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    </div> -->
+            </div>
+        </nav>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2 class="my-4">Categories</h2>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">DVD - movies</a>
+                        <a href="#" class="list-group-item active">VHS - homemade</a>
+                        <a href="#" class="list-group-item">...</a>
+                    </div>
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-primary"><span class="fas fa-th-list"></span> Manage Categories</button>
+                    </div>
+                </div>
+                <!-- /.col-lg-3 -->
+                <div class="col-lg-9">
+                    <div class="row my-4">
+                        <div class="col-lg-10 col-md-12 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        <span class="fas fa-search"></span> Search
+                                    </h4>
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="label" class="col-sm-2 col-form-label">Label</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="label" placeholder="label">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tags" class="col-sm-2 col-form-label">Tags</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="tags" placeholder="space separated tags">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tags" class="col-sm-2 col-form-label">Properties</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="tags" placeholder="key">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="tags" placeholder="value">
+                                            </div>
+                                            <button type="button" class="btn btn-secondary">Add field</button>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="only-selected-category" checked>
+                                                    <label class="form-check-label" for="only-selected-category">
+                                                    Only selected category
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        Pirates of the Caribbean
+                                    </h4>
+                                    <div>
+                                        <i class="text-muted"><span class="fas fa-dot-circle"></span> DVD</i>
+                                        <!-- DVD: <span class="fas fa-dot-circle"></span> -->
+                                        <!-- VHS: <span class="fas fa-tape"></span> -->
+                                        <!-- USB: <span class="fab fa-usb"></span> -->
+                                        <!-- other: <span class="fas fa-minus"></span> -->
+                                    </div>
+                                    <p>
+                                        <span class="badge badge-pill badge-secondary">adventure</span>
+                                        <span class="badge badge-pill badge-secondary">comedy</span>
+                                    </p>
+                                    <div class="card-text">
+                                        <p>
+                                        <h5>Properties:</h5>
+                                        <table class="table table-sm table-bordered">
+                                            <tr>
+                                                <td>Year</td>
+                                                <td>2003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Director</td>
+                                                <td>Gore Verbinski</td>
+                                            </tr>
+                                        </table>
+                                        </p>
+                                        <div>
+                                            <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Record id: 1</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        The Boss Baby
+                                    </h4>
+                                    <div>
+                                        <i class="text-muted"><span class="fab fa-usb"></span> USB</i>
+                                    </div>
+                                    <p>
+                                        <span class="badge badge-pill badge-secondary">comedy</span>
+                                        <span class="badge badge-pill badge-secondary">animated</span>
+                                    </p>
+                                    <div class="card-text">
+                                        <p>
+                                        <h5>Properties:</h5>
+                                        <table class="table table-sm table-bordered">
+                                            <tr>
+                                                <td>Production</td>
+                                                <td>DreamWorks</td>
+                                            </tr>
+                                        </table>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Record id: 2</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        Trip in Scandinavia 2004
+                                    </h4>
+                                    <div>
+                                        <i class="text-muted"><span class="fas fa-tape"></span> VHS</i>
+                                    </div>
+                                    <div class="card-text">
+                                        <p>
+                                        <h5>Entries:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Sweden 5th july - 8th july</li>
+                                            <li class="list-group-item">Norway 9th july - 14th july</li>
+                                            <li class="list-group-item">...</li>
+                                        </ul>
+                                        </p>
+                                        <p>
+                                        <h5>Properties:</h5>
+                                        <table class="table table-sm table-bordered">
+                                            <tr>
+                                                <td>note</td>
+                                                <td>should make backup asap, the tape won't last much longer</td>
+                                            </tr>
+                                        </table>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Record id: 3</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.col-lg-9 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <!-- <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p> -->
+            </div>
+            <!-- /.container -->
+        </footer>
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </body>
+</html>
