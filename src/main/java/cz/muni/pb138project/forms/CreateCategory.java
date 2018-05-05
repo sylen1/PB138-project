@@ -1,6 +1,6 @@
 package cz.muni.pb138project.forms;
 
-public class CrateCategory {
+public class CreateCategory {
     private String name;
 
     public String getName() {
