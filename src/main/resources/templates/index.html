@@ -1,13 +1,261 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Video Database</title>
-</head>
-<body>
-<h1>Sup 🐶-es</h1>
-<p th:text="${msg}">
-    db_status_message
-</p>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Video Database</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="../static/css/custom.css" th:href="@{css/custom.css}">
+        <link rel="stylesheet" href="../static/css/font-awesome.css" th:href="@{css/font-awesome.css}">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">Video Database</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2 class="my-4">Categories</h2>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">DVD - movies</a>
+                        <a href="#" class="list-group-item active">VHS - homemade</a>
+                        <a href="#" class="list-group-item">...</a>
+                    </div>
+                    <div class="mt-4">
+                        <a role="button" class="btn btn-primary" href="manage_categories"><span class="fas fa-th-list"></span> Manage Categories</a>
+                    </div>
+                </div>
+                <!-- /.col-lg-3 -->
+                <div class="col-lg-9">
+                    <div class="row my-4">
+                        <div class="col-lg-10 col-md-12 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        <span class="fas fa-search"></span> Search
+                                    </h4>
+                                    <form th:action="@{/search}" th:method="POST">
+                                        <div class="form-group row">
+                                            <label for="label" class="col-sm-2 col-form-label">Label</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="label" class="form-control" id="label" placeholder="label">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tags" class="col-sm-2 col-form-label">Tags</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="tags" class="form-control" id="tags" placeholder="space separated tags">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" id="properties-group">
+                                            <label for="key" class="col-form-label col-sm-2">Properties</label>
+                                            <div class="col-sm-10 form-group row">
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="prop-keys" class="form-control" id="key" placeholder="key">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="prop-values" class="form-control" id="value" placeholder="value">
+                                                </div>
+                                                <button type="button" class="btn btn-secondary" onclick="addField();">Add field</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" name="only-selected-category" type="checkbox" id="only-selected-category" checked>
+                                                    <label class="form-check-label" for="only-selected-category">
+                                                     Only selected category
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        Pirates of the Caribbean
+                                    </h4>
+                                    <div>
+                                        <i class="text-muted"><span class="fas fa-dot-circle"></span> DVD</i>
+                                        <!-- DVD: <span class="fas fa-dot-circle"></span> -->
+                                        <!-- VHS: <span class="fas fa-tape"></span> -->
+                                        <!-- USB: <span class="fab fa-usb"></span> -->
+                                        <!-- other: <span class="fas fa-minus"></span> -->
+                                    </div>
+                                    <p>
+                                        <span class="badge badge-pill badge-secondary">adventure</span>
+                                        <span class="badge badge-pill badge-secondary">comedy</span>
+                                    </p>
+                                    <div class="card-text">
+                                        <p>
+                                        <h5>Properties:</h5>
+                                        <table class="table table-sm table-bordered">
+                                            <tr>
+                                                <td>Year</td>
+                                                <td>2003</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Director</td>
+                                                <td>Gore Verbinski</td>
+                                            </tr>
+                                        </table>
+                                        </p>
+                                        <div>
+                                            <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Record id: 1</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        The Boss Baby
+                                    </h4>
+                                    <div>
+                                        <i class="text-muted"><span class="fab fa-usb"></span> USB</i>
+                                    </div>
+                                    <p>
+                                        <span class="badge badge-pill badge-secondary">comedy</span>
+                                        <span class="badge badge-pill badge-secondary">animated</span>
+                                    </p>
+                                    <div class="card-text">
+                                        <p>
+                                        <h5>Properties:</h5>
+                                        <table class="table table-sm table-bordered">
+                                            <tr>
+                                                <td>Production</td>
+                                                <td>DreamWorks</td>
+                                            </tr>
+                                        </table>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Record id: 2</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-primary">
+                                        Trip in Scandinavia 2004
+                                    </h4>
+                                    <div>
+                                        <i class="text-muted"><span class="fas fa-tape"></span> VHS</i>
+                                    </div>
+                                    <div class="card-text">
+                                        <p>
+                                        <h5>Entries:</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Sweden 5th july - 8th july</li>
+                                            <li class="list-group-item">Norway 9th july - 14th july</li>
+                                            <li class="list-group-item">...</li>
+                                        </ul>
+                                        </p>
+                                        <p>
+                                        <h5>Properties:</h5>
+                                        <table class="table table-sm table-bordered">
+                                            <tr>
+                                                <td>note</td>
+                                                <td>should make backup asap, the tape won't last much longer</td>
+                                            </tr>
+                                        </table>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Record id: 3</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.col-lg-9 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <!-- <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p> -->
+            </div>
+            <!-- /.container -->
+        </footer>
+        <!-- Bootstrap core JavaScript -->
+        <script src="../static/js/jquery-3.3.1.slim.min.js" th:src="@{js/jquery-3.3.1.slim.min.js}"></script>
+        <script src="../static/js/bootstrap.min.js" th:src="@{js/bootstrap.min.js}"></script>
+        <script>
+            var i = 1;
+            function addField() {
+                var group = document.getElementById("properties-group");
+
+                var root = document.createElement("div");
+                root.setAttribute("class", "col-sm-10 form-group row");
+
+                var div0 = document.createElement("div");
+                div0.setAttribute("class", "col-sm-2 col-form-label");
+
+                var div1 = document.createElement("div");
+                div1.setAttribute("class", "col-sm-4");
+                div1.innerHTML = '<input type="text" name="prop-keys" class="form-control" placeholder="key">';
+
+                var div2 = document.createElement("div");
+                div2.setAttribute("class", "col-sm-4");
+                div2.innerHTML = '<input type="text" name="prop-values" class="form-control" id="value" placeholder="value">';
+
+                var div3 = document.createElement("div");
+                div3.setAttribute("class", "col-sm-2");
+
+                root.appendChild(div0);
+                root.appendChild(div1);
+                root.appendChild(div2);
+                // root.appendChild(div3);
+                group.appendChild(root);
+
+                i++;
+            }
+            // <div class="col-sm-2"></div>
+            // <div class="col-sm-4">
+            //     <input type="text" name="key" class="form-control" id="key" placeholder="key">
+            //     </div>
+            //     <div class="col-sm-4">
+            //     <input type="text" name="value" class="form-control" id="value" placeholder="value">
+            //     </div>
+        </script>
+    </body>
 </html>
