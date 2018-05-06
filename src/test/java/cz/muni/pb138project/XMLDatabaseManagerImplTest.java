@@ -19,7 +19,7 @@ public class XMLDatabaseManagerImplTest {
         XQDataSource xqs = new ExistXQDataSource();
         xqs.setProperty("serverName", "localhost");
         xqs.setProperty("port", "8080");
-        xmlDatabaseManager = new XMLDatabaseManagerImpl(xqs);
+        xmlDatabaseManager = new XMLDatabaseManagerImpl(xqs, "test-database.xml");
     }
 
     @After
