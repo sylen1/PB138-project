@@ -28,4 +28,13 @@ public class ChangeCategory {
     public void setNewCategory(String newCategory) {
         this.newCategory = newCategory;
     }
+
+    @Override
+    public String toString() {
+        return "ChangeCategory{" +
+                "mediaId=" + mediaId +
+                ", oldCategory='" + oldCategory + '\'' +
+                ", newCategory='" + newCategory + '\'' +
+                '}';
+    }
 }

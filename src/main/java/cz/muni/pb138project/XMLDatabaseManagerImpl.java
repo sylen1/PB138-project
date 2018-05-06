@@ -62,7 +62,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     }
 
     @Override
-    public void moveMediumToAnotherCategory(String medium, String category) {
+    public void moveMediumToAnotherCategory(int mediumId, String category) {
         // TODO
     }
 
