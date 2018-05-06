@@ -1,19 +1,20 @@
 package cz.muni.pb138project;
 
 import net.xqj.exist.ExistXQDataSource;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import javax.xml.xquery.XQDataSource;
 import javax.xml.xquery.XQException;
 
 import static org.junit.Assert.*;
 
-/**
- * @author Lubos Lahucky
- */
 public class XMLDatabaseManagerImplTest {
     private XMLDatabaseManagerImpl xmlDatabaseManager;
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
         XQDataSource xqs = new ExistXQDataSource();
         xqs.setProperty("serverName", "localhost");
@@ -21,40 +22,14 @@ public class XMLDatabaseManagerImplTest {
         xmlDatabaseManager = new XMLDatabaseManagerImpl(xqs);
     }
 
-    @org.junit.After
+    @After
     public void tearDown() throws Exception {
         xmlDatabaseManager.closeConnection();
     }
 
-    @org.junit.Test
+    @Test
     public void createCategory() {
     }
 
-    @org.junit.Test
-    public void deleteCategory() {
-    }
-
-    @org.junit.Test
-    public void searchMediaByCategory() {
-    }
-
-    @org.junit.Test
-    public void findAllCategories() throws XQException {
-    }
-
-    @org.junit.Test
-    public void addMediumToCollection() {
-    }
-
-    @org.junit.Test
-    public void moveMediumToAnotherCategory() {
-    }
-
-    @org.junit.Test
-    public void deleteMediumFromCollection() {
-    }
-
-    @org.junit.Test
-    public void searchMedia() {
-    }
+    // ... and other tests
 }
