@@ -54,16 +54,16 @@ public interface XMLDatabaseManager {
 
     /**
      * Moves a medium from one media category to another.
-     * @param medium name of the medium to be moved
+     * @param mediumId id of the medium to be moved
      */
-    void moveMediumToAnotherCategory(String medium, String category);
+    void moveMediumToAnotherCategory(int mediumId, String category);
 
 
     /**
      * Deletes a selected medium from the database.
-     * @param media name of the medium to be deleted
+     * @param mediaId id of the medium to be deleted
      */
-    void deleteMediumFromCollection(String media);
+    void deleteMediumFromCollection(String mediaId);
 
 
     /**
