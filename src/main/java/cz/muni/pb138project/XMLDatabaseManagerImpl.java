@@ -26,19 +26,19 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void createCategory(String category) throws XQException {
-        updateQuery("update insert " + category.toLowerCase() + " into doc(" + doc + ")/collection");
+        updateQuery("update insert " + category + " into doc(" + doc + ")/collection");
     }
 
     @Override
     public void deleteCategory(String category) throws XQException {
-        updateQuery("update delete doc(" + doc + ")/collection/category[@name=" + category.toLowerCase() + "]");
+        updateQuery("update delete doc(" + doc + ")/collection/category[lower-case(@name)=" + category + "]");
     }
 
     @Override
     public String searchMediaByCategory(String category) throws XQException {
         String query = "<media>" +
                 "{" +
-                "for $medium in doc(" + doc + ")/collection/category/medium[../@name=" + category.toLowerCase() + "] " +
+                "for $medium in doc(" + doc + ")/collection/category/medium[../lower-case(@name)=" + category + "] " +
                 "return $medium" +
                 "}" +
                 "</media>";
@@ -76,8 +76,8 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void addMediumToCollection(String medium, String category) throws XQException {
-        updateQuery("update insert " + medium.toLowerCase() +
-                " into doc(" + doc + ")/collection/category[@name=" + category.toLowerCase() + "]");
+        updateQuery("update insert " + medium +
+                " into doc(" + doc + ")/collection/category[lower-case(@name)=" + category + "]");
     }
 
     @Override
@@ -87,7 +87,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void deleteMediumFromCollection(String medium) throws XQException {
-        updateQuery("update delete doc(" + doc + ")//medium[@name=" + medium.toLowerCase() + "]");
+        updateQuery("update delete doc(" + doc + ")//medium[lower-case(@name)=" + medium + "]");
     }
 
     @Override
