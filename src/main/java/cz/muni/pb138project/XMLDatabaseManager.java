@@ -1,5 +1,6 @@
 package cz.muni.pb138project;
 
+import javax.xml.xquery.XQException;
 import java.util.Map;
 
 /**
@@ -12,14 +13,14 @@ public interface XMLDatabaseManager {
      * Creates a new media category and adds it to the database.
      * @param category name of the category to be created
      */
-    void createCategory(String category);
+    void createCategory(String category) throws XQException;
 
 
     /**
      * Removes a media category from the database.
      * @param category name of the category to be deleted
      */
-    void deleteCategory(String category);
+    void deleteCategory(String category) throws XQException;
 
 
     /**
@@ -27,7 +28,7 @@ public interface XMLDatabaseManager {
      * @param category to which the media belong
      * @return all media that belong to one, specified category
      */
-    String searchMediaByCategory(String category);
+    String searchMediaByCategory(String category) throws XQException;
 
 
     /**
@@ -41,7 +42,7 @@ public interface XMLDatabaseManager {
      * <categories>
      * @return all media categories in the database
      */
-    String findAllCategories();
+    String findAllCategories() throws XQException;
 
 
     /**
@@ -49,7 +50,7 @@ public interface XMLDatabaseManager {
      * @param medium to be added to a certain category
      * @param category to add the media to
      */
-    void addMediumToCollection(String medium, String category);
+    void addMediumToCollection(String medium, String category) throws XQException;
 
 
     /**
@@ -61,9 +62,9 @@ public interface XMLDatabaseManager {
 
     /**
      * Deletes a selected medium from the database.
-     * @param media name of the medium to be deleted
+     * @param medium name of the medium to be deleted
      */
-    void deleteMediumFromCollection(String media);
+    void deleteMediumFromCollection(String medium) throws XQException;
 
 
     /**
