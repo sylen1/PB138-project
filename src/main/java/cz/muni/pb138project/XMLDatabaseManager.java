@@ -46,6 +46,25 @@ public interface XMLDatabaseManager {
 
 
     /**
+     * Finds all media categories that currently exist in the database and their counts of media.
+     * Example output:
+     * <categories>
+     *     <category>
+     *         <name>category1</name>
+     *         <count>4</count>
+     *     </category>
+     *     <category>
+     *         <name>category1</name>
+     *         <count>4</count>
+     *     </category>
+     *     ...
+     * <categories>
+     * @return all media categories in the database
+     */
+    String findAllCategoriesWithCounts() throws XQException;
+
+
+    /**
      * Creates a new medium entry and adds it to a given category in the database.
      * @param medium to be added to a certain category
      * @param category to add the media to

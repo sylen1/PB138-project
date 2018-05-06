@@ -57,6 +57,22 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     }
 
     @Override
+    public String findAllCategoriesWithCounts() throws XQException {
+        String query = "<categories>" +
+                "{" +
+                "for $category in doc('database.xml')/collection/category " +
+                "return " +
+                "<category>" +
+                "<name>{data($category/@name)}</name>" +
+                "<count>{count($category/medium)}</count>" +
+                "</category>" +
+                "}" +
+                "</categories>";
+        XQPreparedExpression expression = connection.prepareExpression(query);
+        return expression.executeQuery().getSequenceAsString(null);
+    }
+
+    @Override
     public void addMediumToCollection(String medium, String category) throws XQException {
         updateQuery("update insert " + medium + " into doc('database.xml')/collection/category[@name=" + category + "]");
     }
