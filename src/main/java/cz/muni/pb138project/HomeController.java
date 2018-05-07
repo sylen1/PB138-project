@@ -35,7 +35,7 @@ public class HomeController {
         category = (category != null) ? category : databaseManager.getFirstCategory();
 
         String xmlEntries = databaseManager.searchMediaByCategory(category);
-        String htmlEntries = transformer.transform(xmlEntries, "XSLTTemplateCategory.xsl");
+        String htmlEntries = transformer.transform(xmlEntries, "XSLTTemplateMedium.xsl");
         model.addAttribute("mediaEntries", htmlEntries);
 //        model.addAttribute("category", category);
         return "index";
