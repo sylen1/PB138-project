@@ -35,7 +35,7 @@ public class HomeController {
         category = (category != null) ? category : databaseManager.getFirstCategory();
 
         String xmlEntries = databaseManager.searchMediaByCategory(category);
-        String htmlEntries = transformer.transform(xmlEntries, "media-entries.xsl");
+        String htmlEntries = transformer.transform(xmlEntries, "XSLTTemplateCategory.xsl");
         model.addAttribute("mediaEntries", htmlEntries);
 //        model.addAttribute("category", category);
         return "index";
@@ -64,7 +64,7 @@ public class HomeController {
                 properties.isEmpty() ? null : properties,
                 null);
 
-        String htmlMedia = transformer.transform(xmlMedia, "media-entries.xsl");
+        String htmlMedia = transformer.transform(xmlMedia, "XSLTTemplateMedium.xsl");
         model.addAttribute("mediaEntries", htmlMedia);
 
         return "index";
@@ -85,7 +85,7 @@ public class HomeController {
 
     private void addMenu(Model model) throws TransformerException, XQException {
         String xmlCategories = databaseManager.findAllCategories();
-        String htmlCategories = transformer.transform(xmlCategories, "categories.xsl");
+        String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");
         model.addAttribute("categoryMenu", htmlCategories);
     }
 

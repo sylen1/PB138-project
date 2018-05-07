@@ -52,5 +52,10 @@ public class XMLDatabaseManagerImplTest {
         System.out.println(xmlDatabaseManager.searchMediaByCategory("MoViEs"));
     }
 
+    @Test
+    public void getFirstCategory() throws XQException {
+        System.out.println(xmlDatabaseManager.getFirstCategory());
+    }
+
     // ... and other tests
 }
