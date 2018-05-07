@@ -1,101 +1,96 @@
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:xst="http://www.w3.org/1999/XSL/Transform">
-    
-    <xst:template match="/">
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+    <xsl:template match="/">
+        <xsl:apply-templates/>
+    </xsl:template>
+
+    <xsl:template match="medium">
         <div class="col-lg-5 col-md-6 mb-4">
             <div class="card h-100">
                 <div class="card-body">
                     <h4 class="card-title text-primary">
-                        <xsl:value-of select="medium/label"/>
+                        <xsl:value-of select="label" />
                     </h4>
                     <div>
-                        <i class="text-muted">
-                            <xsl:choose>
-                                <xsl:when test="medium/type='DVD'">
-                                    <span class="fas fa-dot-circle"/>
-                                    DVD
-                                </xsl:when>
-                                <xsl:when test="medium/type='VHS'">
-                                    <span class="fas fa-tape"/>
-                                    VHS
-                                </xsl:when>
-                                <xsl:when test="medium/type='USB'">
-                                    <span class="fab fa-usb"/>
-                                    USB
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <span class="fas fa-minus"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </i>
-                        <!-- DVD: <span class="fas fa-dot-circle"></span> -->
-                        <!-- VHS: <span class="fas fa-tape"></span> -->
-                        <!-- USB: <span class="fab fa-usb"></span> -->
-                        <!-- other: <span class="fas fa-minus"></span> -->
+                        <xsl:apply-templates select="type"/>
                     </div>
-                    <xsl:if test="medium/content">
-                        <xsl:apply-templates select="medium/content"/>
-                    </xsl:if>
-                    <xsl:if test="medium/genres">
-                        <xsl:apply-templates select="medium/genres/genre"/>
-                    </xsl:if>
+                    <xsl:apply-templates select="genres"/>
+
+                    <xsl:apply-templates select="content"/>
+
                     <div class="card-text">
-                        <p>
-                            <xsl:apply-templates select="medium/properties"/>
-                        </p>
-                        <div>
-                            <button type="button" class="btn btn-secondary btn-sm">
-                                <span class="fas fa-th-list"/>
-                                Change Category
-                            </button>
-                        </div>
+                        <xsl:apply-templates select="properties" />
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">
-                        <xsl:value-of select="id"/>
-                    </small>
+                    <xsl:apply-templates select="id"/>
                 </div>
             </div>
         </div>
-    </xst:template>
-    
-    <xsl:template match="genre">
-        <p>
-            <span class="badge badge-pill badge-secondary">
-                <xsl:value-of select="@genre"/>
-            </span>
-        </p>
     </xsl:template>
 
-    <xsl:template match="properties">
-        <h5>Properties:</h5>
-        <table class="table table-sm table-bordered">
-            <xsl:for-each select="*">
-                <tr>
-                    <td>
-                        <xsl:value-of select="name()"/>
-                    </td>
-                    <td>
-                        <xsl:value-of select="current()"/>
-                    </td>
-                </tr>
-            </xsl:for-each>
+    <xsl:template match="genres">
+        <xsl:apply-templates/>
+    </xsl:template>
 
-        </table>
+    <xsl:template match="genre">
+        <span class="badge badge-pill badge-secondary"><xsl:value-of select="."/></span>
+    </xsl:template>
+
+    <xsl:template match="type">
+        <xsl:choose>
+            <xsl:when test="text() = 'DVD'">
+                <i class="text-muted"><span class="fas fa-dot-circle"></span> DVD</i>
+            </xsl:when>
+            <xsl:when test="text() = 'VHS'">
+                <i class="text-muted"><span class="fas fa-tape"></span> VHS</i>
+            </xsl:when>
+            <xsl:when test="text() = 'USB'">
+                <i class="text-muted"><span class="fab fa-usb"></span> USB</i>
+            </xsl:when>
+            <xsl:otherwise>
+                <i class="text-muted"><span class="fas fa-minus"></span> other</i>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="content">
         <p>
             <h5>Entries:</h5>
             <ul class="list-group">
-                <xsl:for-each select="entry">
-                    <li class="list-group-item">
-                        <xsl:value-of select="current()"/>
-                    </li>
-                </xsl:for-each>
+                <xsl:apply-templates select="entry"/>
             </ul>
         </p>
+    </xsl:template>
+
+    <xsl:template match="entry">
+        <li class="list-group-item"><xsl:value-of select="."/></li>
+    </xsl:template>
+
+    <xsl:template match="properties">
+        <p>
+            <h5>Properties:</h5>
+            <table class="table table-sm table-bordered">
+                <tr>
+                    <xsl:apply-templates mode="property"/>
+                </tr>
+            </table>
+        </p>
+    </xsl:template>
+
+    <xsl:template match="*" mode="property">
+        <tr>
+            <td><xsl:value-of select="name(.)"/></td>
+            <td><xsl:value-of select="."/></td>
+        </tr>
+    </xsl:template>
+
+    <xsl:template match="id">
+        <small class="text-muted">Record id: <xsl:value-of select="."/></small>
     </xsl:template>
 
 </xsl:stylesheet>
