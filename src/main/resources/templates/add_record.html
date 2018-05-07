@@ -42,15 +42,35 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h4 class="card-title text-primary">
-                                        <span class="fas fa-search"></span> Search
+                                        <span class="fas fa-plus-circle"></span> Add Record
                                     </h4>
-                                    <form th:action="@{/search}" th:method="POST">
+                                    <form th:action="@{/add_record}" th:method="POST">
                                         <div class="form-group row">
                                             <label for="label" class="col-sm-2 col-form-label">Label</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="label" class="form-control" id="label" placeholder="label">
                                             </div>
                                         </div>
+
+                                        <div class="form-group row">
+                                            <label for="category" class="col-sm-2 col-form-label">Category</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="category" class="form-control" id="category" placeholder="category">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="type" class="col-sm-2 col-form-label">Type</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" id="type" name="type">
+                                                    <option>DVD</option>
+                                                    <option>VHS</option>
+                                                    <option>USB</option>
+                                                    <option>other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group row">
                                             <label for="tags" class="col-sm-2 col-form-label">Tags</label>
                                             <div class="col-sm-10">
@@ -66,18 +86,16 @@
                                                 <div class="col-sm-4">
                                                     <input type="text" name="prop-values" class="form-control" id="value" placeholder="value">
                                                 </div>
-                                                <button type="button" class="btn btn-secondary" onclick="addField();">Add field</button>
+                                                <button type="button" class="btn btn-secondary" onclick="addPropField();">Add field</button>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-2"></div>
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" name="only-selected-category" type="checkbox" id="only-selected-category" checked>
-                                                    <label class="form-check-label" for="only-selected-category">
-                                                     Only selected category
-                                                    </label>
+                                        <div class="form-group row" id="entries-group">
+                                            <label for="key" class="col-form-label col-sm-2">Entries</label>
+                                            <div class="col-sm-10 form-group row">
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="entries" class="form-control" id="entries" placeholder="entry">
                                                 </div>
+                                                <button type="button" class="btn btn-secondary" onclick="addEntryField();">Add field</button>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -89,8 +107,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div th:utext="${mediaEntries}" th:remove="tag"></div>
-
                     </div>
                     <!-- /.row -->
                 </div>
@@ -110,7 +126,7 @@
         <script src="../static/js/jquery-3.3.1.slim.min.js" th:src="@{js/jquery-3.3.1.slim.min.js}"></script>
         <script src="../static/js/bootstrap.min.js" th:src="@{js/bootstrap.min.js}"></script>
         <script>
-            function addField() {
+            function addPropField() {
                 var group = document.getElementById("properties-group");
 
                 var root = document.createElement("div");
@@ -130,6 +146,25 @@
                 root.appendChild(div0);
                 root.appendChild(div1);
                 root.appendChild(div2);
+                group.appendChild(root);
+            }
+
+            function addEntryField() {
+                var group = document.getElementById("entries-group");
+
+                var root = document.createElement("div");
+                root.setAttribute("class", "col-sm-10 form-group row");
+
+                var div0 = document.createElement("div");
+                div0.setAttribute("class", "col-sm-2 col-form-label");
+
+                var div1 = document.createElement("div");
+                div1.setAttribute("class", "col-sm-8");
+                div1.innerHTML = '<input type="text" name="entries" class="form-control" placeholder="entry">';
+
+
+                root.appendChild(div0);
+                root.appendChild(div1);
                 group.appendChild(root);
             }
         </script>

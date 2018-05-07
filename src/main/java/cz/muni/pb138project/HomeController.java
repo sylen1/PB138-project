@@ -13,7 +13,9 @@ import javax.xml.xquery.XQException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
@@ -68,10 +70,70 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping(value = "/add_record", method = GET)
+    public String addRecord(Model model) throws TransformerException, XQException {
+        addMenu(model);
+        return "add_record";
+    }
+
+    @RequestMapping(value = "/add_record", method = POST)
+    public String addRecordPost(@RequestBody MultiValueMap<String, String> form) throws XQException {
+        String recordXml = newRecordToXml(form);
+        databaseManager.addMediumToCollection(recordXml, form.getFirst("category"));
+        return "redirect:/";
+    }
+
     private void addMenu(Model model) throws TransformerException, XQException {
         String xmlCategories = databaseManager.findAllCategories();
         String htmlCategories = transformer.transform(xmlCategories, "categories.xsl");
         model.addAttribute("categoryMenu", htmlCategories);
+    }
+
+    private String newRecordToXml(MultiValueMap<String, String> form) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("<medium>")
+                .append("<id>").append(UUID.randomUUID()).append("</id>")
+                .append("<label>").append(form.getFirst("label")).append("</label>")
+                .append("<type>").append(form.getFirst("type")).append("</type>");
+
+        String[] genres = form.getFirst("tags").split(" ");
+        if (genres.length > 0) {
+            sb.append("<genres>");
+            for (String genre : genres) {
+                sb.append("<genre>")
+                        .append(genre)
+                        .append("</genre>");
+            }
+            sb.append("</genres>");
+        }
+
+
+        List<String> entries = form.get("entries");
+        if (!entries.isEmpty()) {
+            sb.append("<content>");
+            for (String entry : entries) {
+                sb.append("<entry>").append(entry).append("</entry>");
+            }
+            sb.append("</content>");
+        }
+
+        List<String> keys = form.get("prop-keys");
+        List<String> values = form.get("prop-values");
+
+        sb.append("<properties>");
+        for (int i = 0; i < keys.size(); i++) {
+            if (!keys.get(i).isEmpty() && !values.get(i).isEmpty()) {
+                sb.append("<").append(keys.get(i).toLowerCase()).append(">")
+                        .append(values.get(i))
+                        .append("</").append(keys.get(i).toLowerCase()).append(">");
+            }
+        }
+        sb.append("</properties>");
+
+        sb.append("</medium>");
+
+        return sb.toString();
     }
 
 }
