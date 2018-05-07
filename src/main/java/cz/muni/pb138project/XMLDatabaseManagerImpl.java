@@ -103,6 +103,8 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public String getFirstCategory() throws XQException {
-        return null;
+        String query = "doc('" + doc + "')/collection/category[1]/data(@name)";
+        XQPreparedExpression expression = connection.prepareExpression(query);
+        return expression.executeQuery().getSequenceAsString(null);
     }
 }

@@ -48,7 +48,7 @@ public class CategoriesController {
 
     private void addMenu(Model model) throws TransformerException, XQException {
         String xmlCategories = databaseManager.findAllCategories();
-        String htmlCategories = transformer.transform(xmlCategories, "categories.xsl");
+        String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");
         model.addAttribute("categoryMenu", htmlCategories);
     }
 
