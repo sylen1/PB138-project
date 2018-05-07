@@ -94,7 +94,12 @@ public interface XMLDatabaseManager {
      * @param category of the searched media
      * @return
      */
-    String searchMedia(String label, String[] genres, Map<String, String>properties, String category);
+    String searchMedia(String label, String[] genres, Map<String, String>properties, String category) throws XQException;
 
+    /**
+     * Search for name of the first category in the database.
+     * @return name of category
+     */
+    String getFirstCategory() throws XQException;
 
 }

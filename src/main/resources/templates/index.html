@@ -27,11 +27,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <h2 class="my-4">Categories</h2>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">DVD - movies</a>
-                        <a href="#" class="list-group-item active">VHS - homemade</a>
-                        <a href="#" class="list-group-item">...</a>
-                    </div>
+                    <div th:utext="${categoryMenu}"></div>
                     <div class="mt-4">
                         <a role="button" class="btn btn-primary" href="manage_categories"><span class="fas fa-th-list"></span> Manage Categories</a>
                     </div>
@@ -90,117 +86,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h4 class="card-title text-primary">
-                                        Pirates of the Caribbean
-                                    </h4>
-                                    <div>
-                                        <i class="text-muted"><span class="fas fa-dot-circle"></span> DVD</i>
-                                        <!-- DVD: <span class="fas fa-dot-circle"></span> -->
-                                        <!-- VHS: <span class="fas fa-tape"></span> -->
-                                        <!-- USB: <span class="fab fa-usb"></span> -->
-                                        <!-- other: <span class="fas fa-minus"></span> -->
-                                    </div>
-                                    <p>
-                                        <span class="badge badge-pill badge-secondary">adventure</span>
-                                        <span class="badge badge-pill badge-secondary">comedy</span>
-                                    </p>
-                                    <div class="card-text">
-                                        <p>
-                                        <h5>Properties:</h5>
-                                        <table class="table table-sm table-bordered">
-                                            <tr>
-                                                <td>Year</td>
-                                                <td>2003</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Director</td>
-                                                <td>Gore Verbinski</td>
-                                            </tr>
-                                        </table>
-                                        </p>
-                                        <div>
-                                            <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Record id: 1</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h4 class="card-title text-primary">
-                                        The Boss Baby
-                                    </h4>
-                                    <div>
-                                        <i class="text-muted"><span class="fab fa-usb"></span> USB</i>
-                                    </div>
-                                    <p>
-                                        <span class="badge badge-pill badge-secondary">comedy</span>
-                                        <span class="badge badge-pill badge-secondary">animated</span>
-                                    </p>
-                                    <div class="card-text">
-                                        <p>
-                                        <h5>Properties:</h5>
-                                        <table class="table table-sm table-bordered">
-                                            <tr>
-                                                <td>Production</td>
-                                                <td>DreamWorks</td>
-                                            </tr>
-                                        </table>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Record id: 2</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h4 class="card-title text-primary">
-                                        Trip in Scandinavia 2004
-                                    </h4>
-                                    <div>
-                                        <i class="text-muted"><span class="fas fa-tape"></span> VHS</i>
-                                    </div>
-                                    <div class="card-text">
-                                        <p>
-                                        <h5>Entries:</h5>
-                                        <ul class="list-group">
-                                            <li class="list-group-item">Sweden 5th july - 8th july</li>
-                                            <li class="list-group-item">Norway 9th july - 14th july</li>
-                                            <li class="list-group-item">...</li>
-                                        </ul>
-                                        </p>
-                                        <p>
-                                        <h5>Properties:</h5>
-                                        <table class="table table-sm table-bordered">
-                                            <tr>
-                                                <td>note</td>
-                                                <td>should make backup asap, the tape won't last much longer</td>
-                                            </tr>
-                                        </table>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Record id: 3</small>
-                                </div>
-                            </div>
-                        </div>
+                        <div th:utext="${mediaEntries}" th:remove="tag"></div>
+
                     </div>
                     <!-- /.row -->
                 </div>

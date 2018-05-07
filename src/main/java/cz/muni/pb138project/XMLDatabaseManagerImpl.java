@@ -1,6 +1,9 @@
 package cz.muni.pb138project;
 
-import javax.xml.xquery.*;
+import javax.xml.xquery.XQConnection;
+import javax.xml.xquery.XQDataSource;
+import javax.xml.xquery.XQException;
+import javax.xml.xquery.XQPreparedExpression;
 import java.util.Map;
 
 /**
@@ -93,8 +96,13 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     }
 
     @Override
-    public String searchMedia(String label, String[] genres, Map<String, String> properties, String category) {
+    public String searchMedia(String label, String[] genres, Map<String, String> properties, String category) throws XQException {
         // TODO
+        return null;
+    }
+
+    @Override
+    public String getFirstCategory() throws XQException {
         return null;
     }
 }
