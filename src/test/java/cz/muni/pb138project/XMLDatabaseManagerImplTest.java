@@ -28,7 +28,28 @@ public class XMLDatabaseManagerImplTest {
     }
 
     @Test
-    public void createCategory() {
+    public void createCategory() throws XQException {
+        xmlDatabaseManager.createCategory("newCategory");
+    }
+
+    @Test
+    public void deleteCategory() throws XQException {
+        xmlDatabaseManager.deleteCategory("NeWCaTEGORy");
+    }
+
+    @Test
+    public void findAllCategories() throws XQException {
+        System.out.println(xmlDatabaseManager.findAllCategories());
+    }
+
+    @Test
+    public void findAllCategoriesWithCounts() throws XQException {
+        System.out.println(xmlDatabaseManager.findAllCategoriesWithCounts());
+    }
+
+    @Test
+    public void searchMediaByCategory() throws XQException {
+        System.out.println(xmlDatabaseManager.searchMediaByCategory("MoViEs"));
     }
 
     // ... and other tests

@@ -26,19 +26,21 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void createCategory(String category) throws XQException {
-        updateQuery("update insert " + category + " into doc(" + doc + ")/collection");
+        // XQJ does not support insert?
+        updateQuery("update insert <category name='" + category + "' /> into doc('" + doc + "')/collection");
     }
 
     @Override
     public void deleteCategory(String category) throws XQException {
-        updateQuery("update delete doc(" + doc + ")/collection/category[lower-case(@name)=" + category + "]");
+        // XQJ does not support delete?
+        updateQuery("update delete doc('" + doc + "')/collection/category[lower-case(@name)=lower-case('" + category + "')]");
     }
 
     @Override
     public String searchMediaByCategory(String category) throws XQException {
         String query = "<media>" +
                 "{" +
-                "for $medium in doc(" + doc + ")/collection/category/medium[../lower-case(@name)=" + category + "] " +
+                "for $medium in doc('" + doc + "')/collection/category/medium[../lower-case(@name)=lower-case('" + category + "')] " +
                 "return $medium" +
                 "}" +
                 "</media>";
@@ -50,7 +52,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     public String findAllCategories() throws XQException {
         String query = "<categories>" +
                 "{" +
-                "for $category in doc(" + doc + ")/collection/category " +
+                "for $category in doc('" + doc + "')/collection/category " +
                 "return <category>{data($category/@name)}</category>" +
                 "}" +
                 "</categories>";
@@ -62,7 +64,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     public String findAllCategoriesWithCounts() throws XQException {
         String query = "<categories>" +
                 "{" +
-                "for $category in doc(" + doc + ")/collection/category " +
+                "for $category in doc('" + doc + "')/collection/category " +
                 "return " +
                 "<category>" +
                 "<name>{data($category/@name)}</name>" +
@@ -76,8 +78,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void addMediumToCollection(String medium, String category) throws XQException {
-        updateQuery("update insert " + medium +
-                " into doc(" + doc + ")/collection/category[lower-case(@name)=" + category + "]");
+        // TODO
     }
 
     @Override
@@ -87,7 +88,8 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void deleteMediumFromCollection(String medium) throws XQException {
-        updateQuery("update delete doc(" + doc + ")//medium[lower-case(@name)=" + medium + "]");
+        // XQJ does not support delete?
+        updateQuery("update delete doc('" + doc + "')//medium[lower-case(@name)=lower-case('" + medium + "')]");
     }
 
     @Override
