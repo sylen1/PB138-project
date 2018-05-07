@@ -15,13 +15,13 @@
                     <div>
                         <xsl:apply-templates select="type"/>
                     </div>
+                    
                     <xsl:apply-templates select="genres"/>
 
                     <xsl:apply-templates select="content"/>
 
-                    <div class="card-text">
-                        <xsl:apply-templates select="properties" />
-                    </div>
+                    <xsl:apply-templates select="properties" />
+
                     <div>
                         <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
                     </div>
@@ -72,14 +72,16 @@
     </xsl:template>
 
     <xsl:template match="properties">
-        <p>
-            <h5>Properties:</h5>
-            <table class="table table-sm table-bordered">
-                <tr>
-                    <xsl:apply-templates mode="property"/>
-                </tr>
-            </table>
-        </p>
+        <div class="card-text">
+            <p>
+                <h5>Properties:</h5>
+                <table class="table table-sm table-bordered">
+                    <tr>
+                        <xsl:apply-templates mode="property"/>
+                    </tr>
+                </table>
+            </p>
+        </div>
     </xsl:template>
 
     <xsl:template match="*" mode="property">
