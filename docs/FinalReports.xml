@@ -1,0 +1,224 @@
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+    <info>
+        <authorgroup>
+            <author>
+                <personname>Ľudovít Labaj</personname>
+                <email></email>
+            </author>
+
+            <author>
+                <personname>Ľuboš Lahučký</personname>
+                <email></email>
+            </author>
+
+            <author>
+                <personname>Matej Lukeš</personname>
+                <email></email>
+            </author>
+
+            <author>
+                <personname>Kristýna Pekárková</personname>
+                <email>kristyna.pekarkova@gmail.com</email>
+            </author>
+        </authorgroup>
+        <affiliation>
+            <orgname>PB138 Project - XMLVideoJavaWeb</orgname>
+        </affiliation>
+        <pubdate>2018-05-14</pubdate>
+    </info>
+    <section xml:id="introduction">
+        <title>Úvod a obsah</title>
+        <para>
+            Tento docBook dokument je součástí projektu XMLVideoJava web týmu: Ľudovít Labaj, Ľuboš Lahučký, Matej Lukeš, a Kristýna Pekárková.
+            Vytvořeno jako týmový projekt pro kurz 'PB138 Moderní značkovací jazyky a jejich aplikace' na Fakultě informatiky, MU, Brno.
+            Dokument obsahuje závěrečné zprávy všech členů týmu o jejich podílu na projektu a použitých technologiích.
+        </para>
+    </section>
+
+    <section xml:id="finalReports">
+        <Title>Závěrečné zprávy</Title>
+        <section xml:id="finalReports-LudovitLabaj">
+            <Title>Závěrečná zpráva: Ľudovít Labaj</Title>
+            <para>
+                Jednotlivé úlohy:
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-LudovitLabaj-1">Task 1</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-LudovitLabaj-2">Task 2</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-LudovitLabaj-3">Task 3</link>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+            <section xml:id ="finalReports-LudovitLabaj-1">
+                <title>Task 1</title>
+                <para>
+                    Task 1 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-LudovitLabaj-2">
+                <title>Task 2</title>
+                <para>
+                    Task 2 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-LudovitLabaj-3">
+                <title>Task 3</title>
+                <para>
+                    Task 3 description
+                </para>
+            </section>
+
+
+        </section>
+        <section xml:id="finalReports-LubosLahucky">
+            <Title>Závěrečná zpráva: Ľuboš Lahučký</Title>
+            <para>
+                Jednotlivé úlohy:
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-LubosLahucky-1">Task 1</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-LubosLahucky-2">Task 2</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-LubosLahucky-3">Task 3</link>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+            <section xml:id ="finalReports-LubosLahucky-1">
+                <title>Task 1</title>
+                <para>
+                    Task 1 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-LubosLahucky-2">
+                <title>Task 2</title>
+                <para>
+                    Task 2 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-LubosLahucky-3">
+                <title>Task 3</title>
+                <para>
+                    Task 3 description
+                </para>
+            </section>
+
+
+        </section>
+        <section xml:id="finalReports-MatejLukes">
+            <Title>Závěrečná zpráva: Matej Lukeš</Title>
+            <para>
+                Jednotlivé úlohy:
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-MatejLukes-1">Task 1</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-MatejLukes-2">Task 2</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-MatejLukes-3">Task 3</link>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+            <section xml:id ="finalReports-MatejLukes-1">
+                <title>Task 1</title>
+                <para>
+                    Task 1 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-MatejLukes-2">
+                <title>Task 2</title>
+                <para>
+                    Task 2 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-MatejLukes-3">
+                <title>Task 3</title>
+                <para>
+                    Task 3 description
+                </para>
+            </section>
+
+        </section>
+        <section xml:id="finalReports-KristynaPekarkova">
+            <Title>Závěrečná zpráva: Kristýna Pekárková</Title>
+
+            <para>
+                Jednotlivé úlohy:
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-KristynaPekarkova-1">Task 1</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-KristynaPekarkova-1">Task 2</link>
+                        </para>
+                    </listitem>
+
+                    <listitem>
+                        <para>
+                            <link linkend="finalReports-KristynaPekarkova-1">Task 3</link>
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+
+            <section xml:id ="finalReports-KristynaPekarkova-1">
+                <title>Task 1</title>
+                <para>
+                    Task 1 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-KristynaPekarkova-2">
+                <title>Task 2</title>
+                <para>
+                    Task 2 description
+                </para>
+            </section>
+            <section xml:id ="finalReports-KristynaPekarkova-3">
+                <title>Task 3</title>
+                <para>
+                    Task 3 description
+                </para>
+            </section>
+
+        </section>
+    </section>
+</article>
