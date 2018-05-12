@@ -7,10 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.xmldb.api.base.XMLDBException;
 
 import javax.validation.Valid;
 import javax.xml.transform.TransformerException;
-import javax.xml.xquery.XQException;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -24,7 +24,7 @@ public class CategoriesController {
     private XMLDatabaseManager databaseManager;
 
     @RequestMapping("/manage_categories")
-    public String manageCategories(Model model) throws TransformerException, XQException {
+    public String manageCategories(Model model) throws TransformerException, XMLDBException {
         model.addAttribute("createCategoryForm", new CreateCategory());
         addMenu(model);
         return "manage_categories";
@@ -33,7 +33,7 @@ public class CategoriesController {
     @RequestMapping(value = "/create_category", method = POST)
     public String createCategory(@Valid @ModelAttribute("createCategoryForm") CreateCategory createCategory,
                                  BindingResult bindingResult,
-                                 Model model) throws TransformerException, XQException {
+                                 Model model) throws TransformerException, XMLDBException {
 
         addMenu(model);
 
@@ -42,11 +42,11 @@ public class CategoriesController {
             return "manage_categories";
         }
         // TODO: test unique
-//        databaseManager.createCategory(createCategory.getName());
+        databaseManager.createCategory(createCategory.getName());
         return "redirect:/manage_categories";
     }
 
-    private void addMenu(Model model) throws TransformerException, XQException {
+    private void addMenu(Model model) throws TransformerException, XMLDBException {
         String xmlCategories = databaseManager.findAllCategories();
         String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");
         model.addAttribute("categoryMenu", htmlCategories);

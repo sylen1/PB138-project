@@ -1,13 +1,10 @@
 package cz.muni.pb138project;
 
-import net.xqj.exist.ExistXQDataSource;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.xml.xquery.XQDataSource;
-import javax.xml.xquery.XQException;
+import org.xmldb.api.base.XMLDBException;
 
 import static org.junit.Assert.*;
 
@@ -16,10 +13,10 @@ public class XMLDatabaseManagerImplTest {
 
     @Before
     public void setUp() throws Exception {
-        XQDataSource xqs = new ExistXQDataSource();
-        xqs.setProperty("serverName", "localhost");
-        xqs.setProperty("port", "8080");
-        xmlDatabaseManager = new XMLDatabaseManagerImpl(xqs, "test-database.xml");
+        xmlDatabaseManager = new XMLDatabaseManagerImpl("xmldb:exist://localhost:8080/exist/xmlrpc/db",
+                "admin",
+                "",
+                "test-database.xml");
     }
 
     @After
@@ -28,32 +25,32 @@ public class XMLDatabaseManagerImplTest {
     }
 
     @Test
-    public void createCategory() throws XQException {
+    public void createCategory() throws XMLDBException {
         xmlDatabaseManager.createCategory("newCategory");
     }
 
     @Test
-    public void deleteCategory() throws XQException {
+    public void deleteCategory() throws XMLDBException {
         xmlDatabaseManager.deleteCategory("NeWCaTEGORy");
     }
 
     @Test
-    public void findAllCategories() throws XQException {
+    public void findAllCategories() throws XMLDBException {
         System.out.println(xmlDatabaseManager.findAllCategories());
     }
 
     @Test
-    public void findAllCategoriesWithCounts() throws XQException {
+    public void findAllCategoriesWithCounts() throws XMLDBException {
         System.out.println(xmlDatabaseManager.findAllCategoriesWithCounts());
     }
 
     @Test
-    public void searchMediaByCategory() throws XQException {
+    public void searchMediaByCategory() throws XMLDBException {
         System.out.println(xmlDatabaseManager.searchMediaByCategory("MoViEs"));
     }
 
     @Test
-    public void getFirstCategory() throws XQException {
+    public void getFirstCategory() throws XMLDBException {
         System.out.println(xmlDatabaseManager.getFirstCategory());
     }
 

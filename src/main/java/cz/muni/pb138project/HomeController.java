@@ -7,9 +7,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.xmldb.api.base.XMLDBException;
 
 import javax.xml.transform.TransformerException;
-import javax.xml.xquery.XQException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class HomeController {
 
     @RequestMapping("")
     public String index(@RequestParam(required = false) String category,
-                        Model model) throws TransformerException, XQException {
+                        Model model) throws TransformerException, XMLDBException {
 
         addMenu(model);
         category = (category != null) ? category : databaseManager.getFirstCategory();
@@ -42,7 +42,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/search", method = POST)
-    public String search(@RequestBody MultiValueMap<String,String> formData, Model model) throws TransformerException, XQException {
+    public String search(@RequestBody MultiValueMap<String,String> formData, Model model) throws TransformerException, XMLDBException {
         addMenu(model);
 
         String label = formData.getFirst("label");
@@ -71,19 +71,19 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/add_record", method = GET)
-    public String addRecord(Model model) throws TransformerException, XQException {
+    public String addRecord(Model model) throws TransformerException, XMLDBException {
         addMenu(model);
         return "add_record";
     }
 
     @RequestMapping(value = "/add_record", method = POST)
-    public String addRecordPost(@RequestBody MultiValueMap<String, String> form) throws XQException {
+    public String addRecordPost(@RequestBody MultiValueMap<String, String> form) throws XMLDBException {
         String recordXml = newRecordToXml(form);
         databaseManager.addMediumToCollection(recordXml, form.getFirst("category"));
         return "redirect:/";
     }
 
-    private void addMenu(Model model) throws TransformerException, XQException {
+    private void addMenu(Model model) throws TransformerException, XMLDBException {
         String xmlCategories = databaseManager.findAllCategories();
         String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");
         model.addAttribute("categoryMenu", htmlCategories);
