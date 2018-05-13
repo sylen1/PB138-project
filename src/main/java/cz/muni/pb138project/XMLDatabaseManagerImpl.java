@@ -114,7 +114,58 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     @Override
     public String searchMedia(String label, String[] genres, Map<String, String> properties, String category) throws XMLDBException {
         // TODO
-        return null;
+        if (label == null)
+            label = "";
+
+        String query = "let $properties := <properties>";
+        if (properties != null) {
+            StringBuilder queryBuilder = new StringBuilder(query);
+            for (Map.Entry<String, String> property: properties.entrySet()) {
+                queryBuilder.append("<").append(property.getKey()).append(">")
+                        .append(property.getValue())
+                        .append("</").append(property.getKey()).append(">");
+            }
+            query = queryBuilder.toString();
+        }
+        query = query + "</properties>" +
+                "let $genres := <genres>";
+
+        if (genres != null) {
+            StringBuilder queryBuilder = new StringBuilder(query);
+            for (String genre : genres) {
+                queryBuilder.append("<genre>").append(genre).append("</genre>");
+            }
+            query = queryBuilder.toString();
+        }
+
+        query = query + "</genres> " +
+                "return " +
+                "<media>" +
+                "{" +
+                "for $category in doc('" + doc + "')/collection/category ";
+
+        if (category != null) {
+            query = query + "where $category/@name = '" + category + "' ";
+        }
+
+        query = query + "return " +
+                "for $medium in $category/medium " +
+                "return " +
+                "if (fn:contains($medium/label, '" + label + "') " +
+                "and (every $genre in $genres/genre/text() satisfies $genre = $medium/genres/genre/text())" +
+                "and (every $property in $properties/* " +
+                "satisfies ($property/name() = $medium/properties/*/name()" +
+                "and $property/text() = $medium/properties/*/text()))" +
+                ") " +
+                "then $medium " +
+                "else ()" +
+                "}" +
+                "</media>";
+
+        //every $genre in $genres/genre/text() satisfies $genre = medium/genres/genre/text()
+
+
+        return selectQuery(query);
     }
 
     @Override
