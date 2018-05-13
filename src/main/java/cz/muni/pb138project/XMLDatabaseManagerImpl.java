@@ -145,17 +145,18 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
                 "for $category in doc('" + doc + "')/collection/category ";
 
         if (category != null) {
-            query = query + "where $category/@name = '" + category + "' ";
+            query = query + "where fn:lower-case($category/@name) = '" + category.toLowerCase() + "' ";
         }
 
         query = query + "return " +
                 "for $medium in $category/medium " +
                 "return " +
-                "if (fn:contains($medium/label, '" + label + "') " +
-                "and (every $genre in $genres/genre/text() satisfies $genre = $medium/genres/genre/text())" +
+                "if (fn:contains(fn:lower-case($medium/label), '" + label.toLowerCase() + "') " +
+                "and (every $genre in $genres/genre/text() " +
+                "satisfies fn:lower-case($genre) = $medium/genres/genre/fn:lower-case(text()))" +
                 "and (every $property in $properties/* " +
-                "satisfies ($property/name() = $medium/properties/*/name()" +
-                "and $property/text() = $medium/properties/*/text()))" +
+                "satisfies (fn:lower-case($property/name()) = $medium/properties/*/fn:lower-case(name())" +
+                "and fn:lower-case($property/text()) = $medium/properties/*/fn:lower-case(text())))" +
                 ") " +
                 "then $medium " +
                 "else ()" +
