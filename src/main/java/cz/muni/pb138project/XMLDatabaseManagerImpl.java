@@ -21,7 +21,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
             Database database = (Database) cl.newInstance();
             DatabaseManager.registerDatabase(database);
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-            System.out.println(e);
+            throw new RuntimeException(e);
         }
 
         collection = DatabaseManager.getCollection(URI, user, password);
