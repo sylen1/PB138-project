@@ -15,10 +15,14 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     private final XQueryService queryService;
     private final String doc;
 
-    XMLDatabaseManagerImpl(String URI, String user, String password, String document) throws Exception {
-        Class cl = Class.forName("org.exist.xmldb.DatabaseImpl");
-        Database database = (Database)cl.newInstance();
-        DatabaseManager.registerDatabase(database);
+    XMLDatabaseManagerImpl(String URI, String user, String password, String document) throws XMLDBException {
+        try {
+            Class cl = Class.forName("org.exist.xmldb.DatabaseImpl");
+            Database database = (Database) cl.newInstance();
+            DatabaseManager.registerDatabase(database);
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            System.out.println(e);
+        }
 
         collection = DatabaseManager.getCollection(URI, user, password);
         queryService = (XQueryService) collection.getService("XQueryService", "1.0");
