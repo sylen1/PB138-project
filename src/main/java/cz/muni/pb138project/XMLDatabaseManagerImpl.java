@@ -112,7 +112,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void deleteMediumFromCollection(String medium) throws XMLDBException {
-        updateQuery("update delete doc('" + doc + "')//medium[lower-case(@name)=lower-case('" + medium + "')]");
+        updateQuery("update delete doc('" + doc + "')//medium[id/text()='" + medium + "']");
     }
 
     @Override
