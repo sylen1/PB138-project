@@ -78,7 +78,7 @@ public interface XMLDatabaseManager {
      * Moves a medium from one media category to another.
      * @param mediumId id of the medium to be moved
      */
-    void moveMediumToAnotherCategory(int mediumId, String category) throws XMLDBException;
+    void moveMediumToAnotherCategory(String mediumId, String category) throws XMLDBException;
 
 
     /**

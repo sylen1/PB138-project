@@ -67,7 +67,9 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     public String searchMediaByCategory(String category) throws XMLDBException {
         String query = "<media>" +
                 "{" +
-                "for $medium in doc('" + doc + "')/collection/category/medium[../lower-case(@name)=lower-case('" + category + "')] " +
+                "for $medium in " +
+                "doc('" + doc + "')/collection/category/medium[../lower-case(@name)=lower-case('" + category + "')] " +
+                // "order by ($medium/id + 0)" +
                 "return $medium" +
                 "}" +
                 "</media>";
@@ -102,22 +104,25 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public void addMediumToCollection(String medium, String category) throws XMLDBException {
-        // TODO
+        String query = "update insert " + medium +
+                "into doc('" + doc + "')/collection/category[lower-case(@name)=lower-case('" + category + "')]";
+        updateQuery(query);
     }
 
     @Override
-    public void moveMediumToAnotherCategory(int mediumId, String category) {
-        // TODO
+    public void moveMediumToAnotherCategory(String mediumId, String category) throws XMLDBException {
+        String medium = selectQuery("doc('" + doc + "')//medium[id=" + mediumId + "]");
+        deleteMediumFromCollection(mediumId + "");
+        addMediumToCollection(medium, category);
     }
 
     @Override
-    public void deleteMediumFromCollection(String mediumID) throws XMLDBException {
-        updateQuery("update delete doc('" + doc + "')//medium[id/text()='" + mediumID + "']");
+    public void deleteMediumFromCollection(String mediumId) throws XMLDBException {
+        updateQuery("update delete doc('" + doc + "')//medium[id=" + mediumId + "]");
     }
 
     @Override
     public String searchMedia(String label, String[] genres, Map<String, String> properties, String category) throws XMLDBException {
-        // TODO
         if (label == null)
             label = "";
 
