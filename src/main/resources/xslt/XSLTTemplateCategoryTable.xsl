@@ -2,6 +2,11 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:template match="/categories">
         <table class="table">
+            <tr>
+                <th>Category name</th>
+                <th>Media count</th>
+                <th>Delete category</th>
+            </tr>
             <xsl:apply-templates select="category"/>
         </table>
     </xsl:template>
