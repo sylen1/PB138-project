@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.xmldb.api.base.XMLDBException;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import javax.xml.transform.TransformerException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -27,6 +28,14 @@ public class HomeController {
 
     @Autowired
     private XMLDatabaseManager databaseManager;
+
+    private AtomicLong idGenerator;
+
+    @PostConstruct
+    public void init() throws XMLDBException {
+        String maxId = databaseManager.findMaximumMediaId();
+        idGenerator = new AtomicLong(maxId == null || maxId.isEmpty() ? 1L : Long.valueOf(maxId));
+    }
 
     @RequestMapping("")
     public String index(@RequestParam(required = false) String category,
@@ -45,7 +54,10 @@ public class HomeController {
             }
         }
 
-        String xmlEntries = databaseManager.searchMediaByCategory(category);
+        String xmlEntries = "<result>"
+                + databaseManager.findAllCategories()
+                + databaseManager.searchMediaByCategory(category)
+                + "</result>";
         String htmlEntries = transformer.transform(xmlEntries, "XSLTTemplateMedium.xsl");
         model.addAttribute("mediaEntries", htmlEntries);
 //        model.addAttribute("category", category);
@@ -108,6 +120,12 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/change_category", method = POST)
+    public String changeCategory(@RequestBody MultiValueMap<String, String> form) throws XMLDBException {
+        databaseManager.moveMediumToAnotherCategory(form.getFirst("id"), form.getFirst("category"));
+        return "redirect:/";
+    }
+
     private void addMenu(Model model) throws TransformerException, XMLDBException {
         String xmlCategories = databaseManager.findAllCategories();
         String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");
@@ -118,12 +136,12 @@ public class HomeController {
         StringBuilder sb = new StringBuilder();
 
         sb.append("<medium>")
-                .append("<id>").append(UUID.randomUUID()).append("</id>")
+                .append("<id>").append(idGenerator.getAndIncrement()).append("</id>")
                 .append("<label>").append(form.getFirst("label")).append("</label>")
                 .append("<type>").append(form.getFirst("type")).append("</type>");
 
-        String[] genres = form.getFirst("tags").split(" ");
-        if (genres.length > 0) {
+        String[] genres = form.getFirst("tags").trim().split(" ");
+        if (genres.length > 0 && !genres[0].isEmpty()) {
             sb.append("<genres>");
             for (String genre : genres) {
                 sb.append("<genre>")
@@ -135,7 +153,7 @@ public class HomeController {
 
 
         List<String> entries = form.get("entries");
-        if (!entries.isEmpty()) {
+        if (!entries.isEmpty() && !entries.get(0).isEmpty()) {
             sb.append("<content>");
             for (String entry : entries) {
                 sb.append("<entry>").append(entry).append("</entry>");
@@ -146,15 +164,17 @@ public class HomeController {
         List<String> keys = form.get("prop-keys");
         List<String> values = form.get("prop-values");
 
-        sb.append("<properties>");
-        for (int i = 0; i < keys.size(); i++) {
-            if (!keys.get(i).isEmpty() && !values.get(i).isEmpty()) {
-                sb.append("<").append(keys.get(i).toLowerCase()).append(">")
-                        .append(values.get(i))
-                        .append("</").append(keys.get(i).toLowerCase()).append(">");
+        if (!keys.isEmpty() && !values.isEmpty() && !keys.get(0).isEmpty() && !values.get(0).isEmpty()) {
+            sb.append("<properties>");
+            for (int i = 0; i < keys.size(); i++) {
+                if (!keys.get(i).isEmpty() && !values.get(i).isEmpty()) {
+                    sb.append("<").append(keys.get(i).toLowerCase()).append(">")
+                            .append(values.get(i))
+                            .append("</").append(keys.get(i).toLowerCase()).append(">");
+                }
             }
+            sb.append("</properties>");
         }
-        sb.append("</properties>");
 
         sb.append("</medium>");
 

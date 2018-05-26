@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
     <xsl:template match="/">
-        <xsl:apply-templates/>
+        <xsl:apply-templates select="//media"/>
     </xsl:template>
 
     <xsl:template match="medium">
@@ -22,9 +22,13 @@
 
                     <xsl:apply-templates select="properties" />
 
-                    <div>
-                        <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
-                    </div>
+                    <hr/>
+                    <span class="text-muted">Options:</span>
+                    <form action="/change_category" method="POST">
+                        <xsl:apply-templates select="//categories" />
+                        <input name="id" type="hidden" value="{id}" />
+                        <button type="submit" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
+                    </form>
 
                     <div>
                         <a href="/delete_medium?id={id}" role="button" class="btn btn-danger enabled">
@@ -39,7 +43,7 @@
     </xsl:template>
 
     <xsl:template match="genres">
-        <xsl:apply-templates/>
+        <xsl:apply-templates select="genre"/>
     </xsl:template>
 
     <xsl:template match="genre">
@@ -100,4 +104,15 @@
         <small class="text-muted">Record id: <xsl:value-of select="."/></small>
     </xsl:template>
 
+    <xsl:template match="categories">
+        <select name="category" class="form-control">
+            <xsl:apply-templates select="category" />
+        </select>
+    </xsl:template>
+
+    <xsl:template match="category">
+        <option>
+            <xsl:value-of select="."/>
+        </option>
+    </xsl:template>
 </xsl:stylesheet>
