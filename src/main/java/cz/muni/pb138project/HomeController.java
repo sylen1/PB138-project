@@ -97,6 +97,14 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/delete_medium", method = GET)
+    public String deleteMedium(String id) throws XMLDBException {
+        if (id != null) {
+            databaseManager.deleteMediumFromCollection(id);
+        }
+        return "redirect:/";
+    }
+
     private void addMenu(Model model) throws TransformerException, XMLDBException {
         String xmlCategories = databaseManager.findAllCategories();
         String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");

@@ -25,6 +25,11 @@
                     <div>
                         <button type="button" class="btn btn-secondary btn-sm"><span class="fas fa-th-list"></span> Change Category</button>
                     </div>
+
+                    <div>
+                        <a href="/delete_medium?id={id}" role="button" class="btn btn-danger enabled">
+                            <span class="fas fa-times"/> Delete</a>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <xsl:apply-templates select="id"/>
