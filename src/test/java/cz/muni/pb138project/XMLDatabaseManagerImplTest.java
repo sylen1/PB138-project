@@ -16,7 +16,7 @@ public class XMLDatabaseManagerImplTest {
         xmlDatabaseManager = new XMLDatabaseManagerImpl("xmldb:exist://localhost:8080/exist/xmlrpc/db",
                 "admin",
                 "",
-                "test-database.xml");
+                "database.xml");
     }
 
     @After
@@ -52,6 +52,31 @@ public class XMLDatabaseManagerImplTest {
     @Test
     public void getFirstCategory() throws XMLDBException {
         System.out.println(xmlDatabaseManager.getFirstCategory());
+    }
+
+    @Test
+    public void deleteMediumFromCollection() throws XMLDBException {
+        xmlDatabaseManager.deleteMediumFromCollection("8");
+    }
+
+    @Test
+    public void addMediumToCollection() throws XMLDBException {
+        String medium = "<medium> " +
+                "<id>8</id> " +
+                "<label>Tentacles (Tentacoli)</label> " +
+                "<type>DVD</type> " +
+                "<genres> " +
+                "<genre>Horror</genre> " +
+                "<genre>Sci-Fi</genre> " +
+                "<genre>Thriller</genre> " +
+                "</genres> " +
+                "</medium>";
+        xmlDatabaseManager.addMediumToCollection(medium, "NEWcAtegOrY");
+    }
+
+    @Test
+    public void moveMediumToAnotherCategory() throws XMLDBException {
+        xmlDatabaseManager.moveMediumToAnotherCategory(8, "MOviES");
     }
 
     // ... and other tests
