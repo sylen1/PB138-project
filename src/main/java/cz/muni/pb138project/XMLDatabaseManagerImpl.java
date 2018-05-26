@@ -111,8 +111,8 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     }
 
     @Override
-    public void deleteMediumFromCollection(String medium) throws XMLDBException {
-        updateQuery("update delete doc('" + doc + "')//medium[id/text()='" + medium + "']");
+    public void deleteMediumFromCollection(String mediumID) throws XMLDBException {
+        updateQuery("update delete doc('" + doc + "')//medium[id/text()='" + mediumID + "']");
     }
 
     @Override
