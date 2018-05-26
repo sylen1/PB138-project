@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.xmldb.api.base.XMLDBException;
 
+import javax.servlet.http.HttpSession;
 import javax.xml.transform.TransformerException;
 import java.util.HashMap;
 import java.util.List;
@@ -29,10 +30,20 @@ public class HomeController {
 
     @RequestMapping("")
     public String index(@RequestParam(required = false) String category,
-                        Model model) throws TransformerException, XMLDBException {
+                        Model model,
+                        HttpSession session) throws TransformerException, XMLDBException {
 
         addMenu(model);
-        category = (category != null) ? category : databaseManager.getFirstCategory();
+
+        if (category != null) {
+            session.setAttribute("category", category);
+        } else {
+            category = (String) session.getAttribute("category");
+            if (category == null) {
+                category = databaseManager.getFirstCategory();
+                session.setAttribute("category", category);
+            }
+        }
 
         String xmlEntries = databaseManager.searchMediaByCategory(category);
         String htmlEntries = transformer.transform(xmlEntries, "XSLTTemplateMedium.xsl");
@@ -42,14 +53,17 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/search", method = POST)
-    public String search(@RequestBody MultiValueMap<String,String> formData, Model model) throws TransformerException, XMLDBException {
+    public String search(@RequestBody MultiValueMap<String,String> formData, Model model, HttpSession session) throws TransformerException, XMLDBException {
         addMenu(model);
 
         String label = formData.getFirst("label");
         String genres = formData.getFirst("tags");
         String[] genresArray = genres.isEmpty() ? null : genres.split(" ");
 
-//        String category =
+        String category = null;
+        if (formData.containsKey("only-selected-category")) {
+            category = (String) session.getAttribute("category");
+        }
         Map<String, String> properties = new HashMap<>();
         List<String> keys = formData.get("prop-keys");
         List<String> values = formData.get("prop-values");
@@ -62,7 +76,7 @@ public class HomeController {
         String xmlMedia = databaseManager.searchMedia(label.isEmpty() ? null : label,
                 genresArray,
                 properties.isEmpty() ? null : properties,
-                null);
+                category);
 
         String htmlMedia = transformer.transform(xmlMedia, "XSLTTemplateMedium.xsl");
         model.addAttribute("mediaEntries", htmlMedia);
