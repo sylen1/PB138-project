@@ -51,6 +51,14 @@ public class CategoriesController {
         return "redirect:/manage_categories";
     }
 
+    @RequestMapping(value = "/delete_category", method = GET)
+    public String deleteCategory(String id) throws XMLDBException {
+        if (id != null) {
+            databaseManager.deleteCategory(id);
+        }
+        return "redirect:/manage_categories";
+    }
+
     private void addMenu(Model model) throws TransformerException, XMLDBException {
         String xmlCategories = databaseManager.findAllCategories();
         String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategory.xsl");
