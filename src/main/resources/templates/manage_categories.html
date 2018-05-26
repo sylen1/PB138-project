@@ -67,28 +67,7 @@
                         <div class="col-lg-10 col-md-12 mb-4">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <table class="table">
-                                        <tr>
-                                            <td>Category 1</td>
-                                            <td>5 Records</td>
-                                            <td><button type="button" class="btn btn-danger" disabled><span class="fas fa-times"></span> Delete</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Category 2</td>
-                                            <td>8 Records</td>
-                                            <td><button type="button" class="btn btn-danger" disabled=""><span class="fas fa-times"></span> Delete</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Category 3</td>
-                                            <td>0 Records</td>
-                                            <td><button type="button" class="btn btn-danger"><span class="fas fa-times"></span> Delete</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Category 4</td>
-                                            <td>2 Records</td>
-                                            <td><button type="button" class="btn btn-danger" disabled><span class="fas fa-times"></span> Delete</button></td>
-                                        </tr>
-                                    </table>
+                                    <div th:utext="${categories}"></div>
                                 </div>
                             </div>
                         </div>

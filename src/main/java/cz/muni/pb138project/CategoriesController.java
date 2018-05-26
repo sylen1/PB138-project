@@ -12,6 +12,7 @@ import org.xmldb.api.base.XMLDBException;
 import javax.validation.Valid;
 import javax.xml.transform.TransformerException;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
@@ -23,10 +24,14 @@ public class CategoriesController {
     @Autowired
     private XMLDatabaseManager databaseManager;
 
-    @RequestMapping("/manage_categories")
+    @RequestMapping(value = "/manage_categories", method = GET)
     public String manageCategories(Model model) throws TransformerException, XMLDBException {
         model.addAttribute("createCategoryForm", new CreateCategory());
         addMenu(model);
+
+        String xmlCategories = databaseManager.findAllCategoriesWithCounts();
+        String htmlCategories = transformer.transform(xmlCategories, "XSLTTemplateCategoryTable.xsl");
+        model.addAttribute("categories", htmlCategories);
         return "manage_categories";
     }
 
