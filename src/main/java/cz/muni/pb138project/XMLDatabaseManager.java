@@ -89,6 +89,12 @@ public interface XMLDatabaseManager {
 
 
     /**
+     * Finds maximal value of medium id
+     * @return string with maximum id value
+     */
+    String findMaximumMediaId() throws XMLDBException;
+
+    /**
      * Searches for media with given attributes.
      * @param label
      * @param genres to which the media belong

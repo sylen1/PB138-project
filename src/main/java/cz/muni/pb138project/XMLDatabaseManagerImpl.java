@@ -122,6 +122,12 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     }
 
     @Override
+    public String findMaximumMediaId() throws XMLDBException {
+        String query = "max(doc('" + doc + "')//medium/data(id))";
+        return selectQuery(query);
+    }
+
+    @Override
     public String searchMedia(String label, String[] genres, Map<String, String> properties, String category) throws XMLDBException {
         if (label == null)
             label = "";
