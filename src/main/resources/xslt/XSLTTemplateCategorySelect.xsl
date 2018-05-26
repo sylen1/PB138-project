@@ -7,9 +7,9 @@
     </xsl:template>
 
     <xsl:template match="category">
-        <otion>
+        <option>
             <xsl:value-of select="."/>
-        </otion>
+        </option>
     </xsl:template>
 
 
