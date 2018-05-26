@@ -123,7 +123,6 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
 
     @Override
     public String searchMedia(String label, String[] genres, Map<String, String> properties, String category) throws XMLDBException {
-        // TODO
         if (label == null)
             label = "";
 
