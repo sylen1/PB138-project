@@ -87,6 +87,9 @@ public class HomeController {
     @RequestMapping(value = "/add_record", method = GET)
     public String addRecord(Model model) throws TransformerException, XMLDBException {
         addMenu(model);
+        String xmlEntries = databaseManager.findAllCategories();
+        String htmlEntries = transformer.transform(xmlEntries, "XSLTTemplateCategorySelect.xsl");
+        model.addAttribute("categoryEntries", htmlEntries);
         return "add_record";
     }
 
