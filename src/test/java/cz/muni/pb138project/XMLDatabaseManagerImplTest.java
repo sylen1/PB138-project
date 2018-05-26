@@ -16,7 +16,7 @@ public class XMLDatabaseManagerImplTest {
         xmlDatabaseManager = new XMLDatabaseManagerImpl("xmldb:exist://localhost:8080/exist/xmlrpc/db",
                 "admin",
                 "",
-                "database.xml");
+                "test-database.xml");
     }
 
     @After
@@ -76,7 +76,7 @@ public class XMLDatabaseManagerImplTest {
 
     @Test
     public void moveMediumToAnotherCategory() throws XMLDBException {
-        xmlDatabaseManager.moveMediumToAnotherCategory(8, "MOviES");
+        xmlDatabaseManager.moveMediumToAnotherCategory("8", "MOviES");
     }
 
     // ... and other tests

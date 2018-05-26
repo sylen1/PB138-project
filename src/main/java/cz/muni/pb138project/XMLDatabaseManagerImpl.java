@@ -110,7 +110,7 @@ public class XMLDatabaseManagerImpl implements XMLDatabaseManager {
     }
 
     @Override
-    public void moveMediumToAnotherCategory(int mediumId, String category) throws XMLDBException {
+    public void moveMediumToAnotherCategory(String mediumId, String category) throws XMLDBException {
         String medium = selectQuery("doc('" + doc + "')//medium[id=" + mediumId + "]");
         deleteMediumFromCollection(mediumId + "");
         addMediumToCollection(medium, category);
