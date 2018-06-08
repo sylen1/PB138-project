@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+	<info>
+		<title>PB138 projekt - Finálna správa</title>
+        <author>
+            <personname>Ľudovít Labaj</personname>
+            <email>461462@mail.muni.cz</email>
+        </author>
+    </info>
+
+    <sect1 xml:id="spojazdnenie">
+    	<title>Spojazdnenie backend-u</title>
+    	<para>
+    		Pre backend som sa rozhodol použit framework <ulink url="https://spring.io/projects/spring-boot">Spring Boot</ulink>, kvôli jednoduchému použitiu a takmer žiadnej konfigurácie potrebnej k spusteniu aplikácie. Pre spojazdnenie bolo potrebné iba vytvorit projekt na <ulink url="http://start.spring.io">start.spring.io</ulink>, vybrať potrebné moduly (v tomto prípade Web a Thymeleaf) a importovať do vývojového prostredia. <ulink url="https://www.thymeleaf.org/">Thymeleaf</ulink> je nástroj pomocou ktorého je možné dynamicky generovať HTML pridaním premenných z Java kódu (alternatíva ku <code>JSP</code>).
+    	</para>
+    </sect1>
+    <sect1 xml:id="web-design">
+    	<title>Web Design</title>
+    	<para>
+            Pre krajší vzhľad bol použitý CSS framework <ulink url="https://getbootstrap.com">Bootstrap 4</ulink> a ikonky použté z <ulink url="https://fontawesome.com">FontAwesome</ulink>. Pri návrhu stránok som sa snažil vytvoriť moderný, minimalistický vzhľad ktorý je jednoducho použiteľný a prehladný. Jednotlivé stránky su písané prevažne v HTML, ale pri formuláry pre vyhľadávanie a pridávanie záznamu bol použitý JavaScript kvôli dynamickému počtu prvkov. Formuláre majú tlačidlo <quote>Add filed</quote>, ktoré pridá nový prvok.
+    	</para>
+    </sect1>
+    <sect1 xml:id="formulare">
+        <title>Prepojenie Formulárov a Backend-u</title>
+        <para>
+            Pre správne fungovanie aplikácie je potrebné prepojiť formuláre s backend-om, inak povedané, uložiť hodnoty z formulárov do Java premenných. Tieto metódy sú implementované v <code>HomeController</code> a <code>CategoriesController</code>. Pre formuláre s dynamickým počtom prvkov bola použitá trieda <code>org.springframework.util.MultiValueMap&lt;String, String&gt;</code>, čo je vpodstate predpripravné <code>Map&lt;String, List&lt;String&gt;&gt;</code>, obohatené o pomocné metódy.
+        </para>
+    </sect1>
+    <sect1 xml:id="organizacia">
+        <title>Organizácia týmu</title>
+        <para>
+            Keď bolo potrebné, pomáhal som vedúcej týmu Kristýne s organizáciou týmu, väčšinou vo forme pridelovania úloh členom týmu pomocu issues v GitHub-e.
+        </para>
+    </sect1>
+</article>

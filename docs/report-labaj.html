@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="Ľudovít Labaj 461462@mail.muni.cz">
+  <title>PB138 projekt - Finálna správa</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">PB138 projekt - Finálna správa</h1>
+<p class="author">Ľudovít Labaj <a href="mailto:461462@mail.muni.cz">461462@mail.muni.cz</a></p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#spojazdnenie">Spojazdnenie backend-u</a></li>
+<li><a href="#web-design">Web Design</a></li>
+<li><a href="#formulare">Prepojenie Formulárov a Backend-u</a></li>
+<li><a href="#organizacia">Organizácia týmu</a></li>
+</ul>
+</nav>
+<h1 id="spojazdnenie">Spojazdnenie backend-u</h1>
+<p>Pre backend som sa rozhodol použit framework <a href="https://spring.io/projects/spring-boot">Spring Boot</a>, kvôli jednoduchému použitiu a takmer žiadnej konfigurácie potrebnej k spusteniu aplikácie. Pre spojazdnenie bolo potrebné iba vytvorit projekt na <a href="http://start.spring.io">start.spring.io</a>, vybrať potrebné moduly (v tomto prípade Web a Thymeleaf) a importovať do vývojového prostredia. <a href="https://www.thymeleaf.org/">Thymeleaf</a> je nástroj pomocou ktorého je možné dynamicky generovať HTML pridaním premenných z Java kódu (alternatíva ku <code>JSP</code>).</p>
+<h1 id="web-design">Web Design</h1>
+<p>Pre krajší vzhľad bol použitý CSS framework <a href="https://getbootstrap.com">Bootstrap 4</a> a ikonky použté z <a href="https://fontawesome.com">FontAwesome</a>. Pri návrhu stránok som sa snažil vytvoriť moderný, minimalistický vzhľad ktorý je jednoducho použiteľný a prehladný. Jednotlivé stránky su písané prevažne v HTML, ale pri formuláry pre vyhľadávanie a pridávanie záznamu bol použitý JavaScript kvôli dynamickému počtu prvkov. Formuláre majú tlačidlo “Add filed”, ktoré pridá nový prvok.</p>
+<h1 id="formulare">Prepojenie Formulárov a Backend-u</h1>
+<p>Pre správne fungovanie aplikácie je potrebné prepojiť formuláre s backend-om, inak povedané, uložiť hodnoty z formulárov do Java premenných. Tieto metódy sú implementované v <code>HomeController</code> a <code>CategoriesController</code>. Pre formuláre s dynamickým počtom prvkov bola použitá trieda <code>org.springframework.util.MultiValueMap&lt;String, String&gt;</code>, čo je vpodstate predpripravné <code>Map&lt;String, List&lt;String&gt;&gt;</code>, obohatené o pomocné metódy.</p>
+<h1 id="organizacia">Organizácia týmu</h1>
+<p>Keď bolo potrebné, pomáhal som vedúcej týmu Kristýne s organizáciou týmu, väčšinou vo forme pridelovania úloh členom týmu pomocu issues v GitHub-e.</p>
+</body>
+</html>
