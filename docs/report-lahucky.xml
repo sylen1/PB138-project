@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+	<info>
+		<title>PB138 projekt - Finálna správa</title>
+        <author>
+            <personname>Ľuboš Lahučký</personname>
+            <email>456377@mail.muni.cz</email>
+        </author>
+    </info>
+
+    <sect1 xml:id="database-setup">
+    	<title>XML database setup</title>
+    	<para>
+    		Pri výbere XML databázy som sa rozhodol pre <ulink url="http://exist-db.org">eXist-db</ulink> z dôvodu, že je open source a práca s ňou bola ukázaná na cvičeniach, teda s ňou bol oboznámený každý člen tímu.
+			Nasledovalo vytvorenie rozumnej štruktúry XML databázy. 
+			Po konzultácii môjho prvotného návrhu s tímom vznikla súčasná forma, ktorú je možné nájsť napríklad v súbore sample-database.xml
+    	</para>
+    </sect1>
+    <sect1 xml:id="manager-implementation">
+    	<title>XMLDatabaseManager implementation</title>
+    	<para>
+            Moja druhá úloha bola implementovať interface XMLDatabaseManager, ktorý obsahuje všetky metódy potrebné pre komunikáciu webovej aplikácie s XML databázou.
+			Zo začiatku som plánoval využiť <ulink url="http://xqj.net/">XQJ - XQuery API for Java</ulink>, ale vyskytli sa problémy pri XQuery dotazoch, ktoré mali vykonávať zmeny v databáze.
+			Rozhodol som sa teda pre prechod na <ulink url="http://xmldb-org.sourceforge.net">XML:DB API</ulink>, v ktorom fungovali aj problémové dotazy.
+			S touto úlohou mi pomáhal aj zvyšok tímu, konkrétne: 
+    	</para>
+		<itemizedlist mark='bullet'>
+			<listitem>
+				<para>
+					Matej Lukeš implementoval metódu searchMedia,
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Kristýna Pekárková implementovala findMaximumMediaId,
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					Ľudovít Labaj upozornil na chyby spojené s rozlišovaním veľkých a malých písmen
+				</para>
+			</listitem>
+		</itemizedlist>
+    </sect1>
+</article>
