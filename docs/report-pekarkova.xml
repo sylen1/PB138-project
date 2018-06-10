@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+
+	<info>
+		<title>PB138 projekt - Závěrečná zpráva</title>
+        <author>
+            <personname>Kristýna Pekárková</personname>
+            <email>kristyna.pekarkova@gmail.com</email>
+        </author>
+    </info>
+
+    <section xml:id="introduction">
+        <para>
+        Tento docBook dokument je součástí projektu XMLVideoJava web týmu: Ľudovít Labaj, Ľuboš Lahučký, Matej Lukeš, a Kristýna Pekárková.
+        Dokument zahrnuje mou závěrečnou zprávu o podílu na projektu.
+        </para>
+    </section>
+
+    <sect1 xml:id="management">
+    	<title>Vedení týmu</title>
+    	<para>
+            Mým úkolem bylo vést tým - především kontrolovat dodržení kontrolních bodů a to, jak vývoj probíhá.
+            Pro tento účel jsem používala zejména služby GH - issues a milestones. 
+    	</para>
+    </sect1>
+
+    <sect1 xml:id="interface">
+        <title>Rozhraní pro správu databáze, implementace odstranění kategorie</title>
+        <para>
+            Vytvořila jsem základní verzi rozhraní XMLDatabaseManager.
+            Rozhraní definuje funkce specifikované v zadání projektu - vytvoření a správa médií a kategorií, vyhledávání v databázi atd.
+            Implementovala jsem také funkci deleteCategory ve třídě CategoriesController, sloužící k odstranění prázné
+            kategorie z databáze. Společně s tím jsem implementovala XSLTTemplateCategoryTable pro XSLT transformaci stránky
+            zobrazující seznam kategorií a umožňující jejich smazání v případě, že jsou prázdné.
+        </para>
+    </sect1>
+
+    <sect1 xml:id="wiki">
+        <title>Wiki projektu</title>
+        <para>
+            Na vytvoření wiki projektu jsem zvolila službu u repozitáře projektu na Githubu. Zveřejnila jsem zde originální zadání projektu
+            a funkční požadavky, dále náš návrh a technologie použité při vývoji. 
+        </para>
+    </sect1>
+
+    <sect1 xml:id="prezentace">
+        <title>Prezentace pro obhajobu</title>
+        <para>
+            Prostřednictvím Google Docs jsem vytvořila prezentaci pro závěrečnou obhajobu našeho projektu.
+            Prezentace obsahuje představení týmu a zadání projektu. Následuje popis našeho návrhu a ukázky
+            toho, jak aplikace funguje.        
+        </para>
+    </sect1>
+    
+</article>
