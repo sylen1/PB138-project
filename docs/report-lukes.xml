@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+	<info>
+		<title>PB138 projekt - Finálna správa</title>
+        <author>
+            <personname>Matej Lukeš</personname>
+            <email>456316@mail.muni.cz</email>
+        </author>
+    </info>
+
+    <sect1 xml:id="vytvorenie">
+    	<title>Vytvorenie XSLT transformácií</title>
+    	<para>
+			Keďže dáta v databáze sú uložené vo formáte XML, nebolo potrebné vytvárať entity a preto sme sa rozhodli priamo transformovať dáta do HTML. 
+			Na to sú použté XSLT transformácie, ktoré z dát vo formáte XML vyčlenia relevantné informácie o zázname a vytvoria požadované HTML fragmenty, ktoré sú následne vložené do HTML šablóny.
+		</para>
+    </sect1>
+    <sect1 xml:id="xsdSchema">
+    	<title>Vytvorenie XSD Schémy</title>
+    	<para>
+            Mojou ďalšou ulohou bolo vytvoriť formálny model databázy. Zvolil som XML Schému kvôli skúsenostiam s ňou z domácich úloh a sile XML schémy ako nástroja.
+		</para>
+    </sect1>
+    <sect1 xml:id="pomoc">
+        <title>Pomoc ostatným členom tímu</title>
+        <para>
+			Pomáhal som ostatným členom tímu hlavne prostredníctvom mne pridelených issues v Github-e napríklad vytvorením tlačidla na odstránenie záznamu z databázy a jeho implementácie v HomeControlleri a implementáciou metódy searchMedia v manažéry databázy.
+		</para>
+    </sect1>
+</article>
